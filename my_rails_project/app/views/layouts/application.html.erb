@@ -9,6 +9,10 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+      <%= link_to 'Recipes', user_recipes_path(current_user) %>
+    <% end %>
+    <hr>
     <%= yield %>
   </body>
 </html>
