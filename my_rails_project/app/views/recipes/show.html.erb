@@ -1,0 +1,6 @@
+<h2><%= @recipe.name %></h2>
+<p>Prep Time: <%= @recipe.prep_time %> minutes </p>
+<p>Cook Time: <%= @recipe.cook_time %> minutes </p>
+
+<%= link_to 'Edit Recipe', edit_recipe_path(@recipe) %> |
+<%= link_to 'Remove Recipe', @recipe, :method => :delete, :confirm => "Are you sure ?"%>
