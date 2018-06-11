@@ -11,7 +11,7 @@ class IngredientsController < ApplicationController
     @ingredient = Ingredient.new(ingredient_params)
     if @ingredient.save
       flash[:success] = "Ingredient Added!"
-      redirect_to @ingredient
+      redirect_to recipe_path
     else
       flash[:error] = "Error. Ingredient not added."
       render 'new'
