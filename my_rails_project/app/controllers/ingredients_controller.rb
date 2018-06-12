@@ -1,17 +1,21 @@
 class IngredientsController < ApplicationController
   def index
-    @ingredients = Ingredient.all
+    if params[:recipe_id]
+      @ingredients = Recipe.find(params[:recipe_id]).ingredients
+    else
+      @ingredients = Ingredient.all
+    end
   end
 
   def new
-    @ingredient = Ingredient.new
+    @ingredient = Ingredient.new(recipe_id: params[:recipe_id])
   end
 
   def create
     @ingredient = Ingredient.new(ingredient_params)
     if @ingredient.save
       flash[:success] = "Ingredient Added!"
-      redirect_to recipe_path
+      redirect_to recipe_path(@ingredient)
     else
       flash[:error] = "Error. Ingredient not added."
       render 'new'
@@ -20,6 +24,6 @@ class IngredientsController < ApplicationController
 
   private
   def ingredient_params
-    params.require(:ingredient).permit(:name, :quantity)
+    params.require(:ingredient).permit(:name, :quantity, :recipe_id)
   end
 end
