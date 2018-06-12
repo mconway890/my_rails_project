@@ -13,10 +13,9 @@ class RecipesController < ApplicationController
       r.user = current_user
     end
     if @recipe.save
-      flash[:success] = "Recipe Added!"
+      flash[:success] = "Recipe added successfully!"
       redirect_to @recipe
     else
-      flash[:error] = "Error. Recipe not added."
       render 'new'
     end
   end
