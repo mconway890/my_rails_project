@@ -22,7 +22,13 @@
   Cook Time :
   <%= f.text_field :cook_time %>
   minutes.<br/>
+
+  <%= f.fields_for :ingredient do |i| %>
+  <%= i.label :name, 'Ingredient:' %>
+  <%= i.text_field :name %>
+
   <%= f.submit %>
+  <% end %>
 <% end %>
 </div>
 <hr>
