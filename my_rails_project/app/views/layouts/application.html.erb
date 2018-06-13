@@ -8,6 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -61,14 +62,13 @@
     </nav>
 
     <div class="jumbotron">
-      <div class="container-main">
+      <div class="w3-container">
         <%= yield %>
         <% flash.each do |key, value| %>
           <div class="alert alert-<%= key %>"><%= value %></div>
         <% end %>
       </div>
     </div>
-
     <!-- Footer -->
     <footer class="page-footer">
       <div class="footer-copyright text-center py-3"> VeggieRecipeFinder © 2018</div>

@@ -19,6 +19,8 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;
+  background-color: #eee;
+  margin: 0;
 }
 
 /* LINKS */
@@ -69,22 +71,33 @@ ul.nav.navbar-nav {
   color: #9cb4d8;
 }
 
+.navbar-inverse .navbar-nav>.active>a {
+  background-color: #435fa2;
+}
+.navbar-inverse .navbar-nav>.active>a:hover {
+  background-color: #3c5798;
+}
+
 .navbar {
   position: relative;
   min-height: 50px;
   margin-bottom: 0px;
   border: 1px solid transparent;
   border-radius: 0px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
 }
 
 /* JUMBOTRON */
 
 div.jumbotron {
-  background-image: url("vegetables-wallpaper.jpg");
+  /*background-image: url("vegetables-wallpaper.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  background-position: center;
+  background-position: center;*/
   margin-bottom: 0px;
   height: 600px;
   z-index: -1;
@@ -92,15 +105,7 @@ div.jumbotron {
 
 /* MAIN */
 
-div.container-main {
-  margin-left: 100px;
-  margin-right: 500px;
-  padding: 20px;
-  background-color: #edf0f5;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #3c5898;
-}
+
 
 .alert {
   margin-bottom: 0px;
@@ -117,6 +122,9 @@ div.container-main {
 .page-footer {
   background-color: #3c5898;
   color: #fff;
-  height: 75px;
-  padding-top: 25px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
