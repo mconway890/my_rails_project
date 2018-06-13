@@ -14,10 +14,109 @@
  *= require_self
  */
 
- body {
-   font-family: 'Roboto', sans-serif;
- }
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333333;
+}
 
- ul.nav.navbar-nav {
-   float: right;
- }
+/* LINKS */
+
+input[type=submit] {
+  background-color: #4267b2;
+  border-color: #29487d;
+  border: 1px solid #ced0d4;
+  color: white;
+  font-size: 12px;
+  border-radius: 2px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 18px;
+  padding: 2px 6px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+input[type=submit]:hover {
+  background-color: #365899;
+  border-color: #29487d;
+}
+
+/* NAVBAR */
+
+ul.nav.navbar-nav {
+  float: right;
+}
+
+.navbar-inverse {
+  background-color: #3c5898;
+  border-color: #080808;
+}
+
+.navbar-inverse .navbar-brand {
+  color: white;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  color: #9cb4d8;
+}
+
+.navbar {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 0px;
+  border: 1px solid transparent;
+  border-radius: 0px;
+}
+
+/* JUMBOTRON */
+
+div.jumbotron {
+  background-image: url("vegetables-wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  margin-bottom: 0px;
+  height: 600px;
+  z-index: -1;
+}
+
+/* MAIN */
+
+div.container-main {
+  margin-left: 100px;
+  margin-right: 500px;
+  padding: 20px;
+  background-color: #edf0f5;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #3c5898;
+}
+
+.alert {
+  margin-bottom: 0px;
+  color: red;
+}
+
+#error_explanation h2, li {
+  font-size: 13px;
+  color: red;
+}
+
+/* FOOTER */
+
+.page-footer {
+  background-color: #3c5898;
+  color: #fff;
+  height: 75px;
+  padding-top: 25px;
+}
