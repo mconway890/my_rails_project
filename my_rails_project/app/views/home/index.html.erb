@@ -1,0 +1,15 @@
+<div class="jumbotron">
+  <div class="container">
+    <div class="heading">
+      <% if user_signed_in?%>
+        <h2>Welcome back
+          <%= current_user.name %></h2>
+      <% else %>
+        <h2>Welcome to Veggie Recipe Finder!</h2>
+      <% end %>
+    <p>
+      The best place to find clean, healthy, vegetarian meals.
+    </p>
+    </div>
+  </div>
+</div>
