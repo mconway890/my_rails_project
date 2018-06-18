@@ -15,20 +15,20 @@
   <% end %>
   <%= form_for(@recipe) do |f| %>
   Recipe Name:
-  <%= f.text_field :name %><br/>
+  <%= f.text_field :name %><br/><br/>
   Prep Time :
   <%= f.text_field :prep_time %>
-  minutes.<br/>
+  minutes.<br/><br/>
   Cook Time :
   <%= f.text_field :cook_time %>
-  minutes.<br/>
+  minutes.<br/><br/>
 
-  <%= f.fields_for :ingredient do |i| %>
-  <%= i.label :name, 'Ingredient:' %>
-  <%= i.text_field :name %>
-
+  <%#= f.fields_for @ingredient do |i| %>
+  <%#= i.label :name, 'Ingredient:' %>
+  <%#= i.text_field :name %>
+  <br/>
   <%= f.submit %>
-  <% end %>
+  <%# end %>
 <% end %>
 </div>
 <hr>
