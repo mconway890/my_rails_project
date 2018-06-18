@@ -4,9 +4,9 @@
     <title>MyRailsProject</title>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -15,13 +15,20 @@
 
   <body>
 
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
         <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
           <a class="navbar-brand" href="/">veggie recipes</a>
         </div>
-        <ul class="nav navbar-nav">
-          <li class="active">
+        <div id="navbar" class="collapse navbar-collapse" aria-expanded="false" style="height: 1px;">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
             <% if user_signed_in? %>
               <a href="/">
                 <span class="glyphicon glyphicon-home"></span>
@@ -42,7 +49,6 @@
                 <span class="glyphicon glyphicon-log-out"></span>
                 Sign Out</a>
             </li>
-            <!--<li>Logged in as <strong><%= current_user.email %></strong> </li>-->
           </ul>
         <% else %>
           <ul class="nav navbar-nav navbar-right">
@@ -58,6 +64,7 @@
             </li>
           </ul>
         <% end %>
+      </div>
       </div>
     </nav>
 
