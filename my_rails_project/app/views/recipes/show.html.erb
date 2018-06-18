@@ -2,7 +2,8 @@
 <p>Prep Time: <%= @recipe.prep_time %> minutes </p>
 <p>Cook Time: <%= @recipe.cook_time %> minutes </p>
 <br>
-<%= link_to 'Add Ingredients', new_ingredient_path(@recipe) %> |
+<%= render 'ingredients/list_ingredients', recipe: @recipe %>
+<%= link_to 'Add Ingredients', new_ingredient_path %> |
 <%= link_to 'Edit Recipe', edit_user_recipe_path(@recipe) %> |
 <%= link_to 'Remove Recipe', @recipe, :method => :delete, :confirm => "Are you sure ?"%>
 <hr>

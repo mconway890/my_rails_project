@@ -24,13 +24,20 @@
   Cook Time :
   <%= f.text_field :cook_time %>
   minutes.<br/><br/>
-
-  <%#= f.fields_for @ingredient do |i| %>
-  <%#= i.label :name, 'Ingredient:' %>
-  <%#= i.text_field :name %>
-  <br/>
+  <h2>Add Ingredients:</h2>
+  <div>
+  <%= f.fields_for :recipe_ingredients, @ingredients do |ri| %>
+  <div>
+  <%= ri.label :name, 'Quantity' %>
+  <%= ri.text_field :quantity %>
+  Select Ingredient: <%= ri.collection_select :ingredient_id, Ingredient.order('name ASC').all, :id, :name, include_blank: 'Select Ingredient' %><br>
+    <%= ri.fields_for :ingredient, @recipe.ingredients.build do |ingredient| %>
+    Or Create New Ingredient: <%= ingredient.text_field :name %>
+    <% end %>
+  </div>
+    <% end %>
+  </div>
   <%= f.submit %>
-  <%# end %>
 <% end %>
 </div>
 <hr>

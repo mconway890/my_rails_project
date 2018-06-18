@@ -8,18 +8,22 @@ class IngredientsController < ApplicationController
   end
 
   def new
-    @ingredient = Ingredient.new(recipe_id: params[:recipe_id])
+    @ingredient = Ingredient.new
   end
 
   def create
     @ingredient = Ingredient.new(ingredient_params)
     if @ingredient.save
       flash[:success] = "Ingredient Added!"
-      redirect_to recipe_path(@ingredient)
+      redirect_to ingredient_path(@ingredient)
     else
       flash[:error] = "Error. Ingredient not added."
       render 'new'
     end
+  end
+
+  def show
+    @ingredient = Ingredient.find(params[:id])
   end
 
   private
