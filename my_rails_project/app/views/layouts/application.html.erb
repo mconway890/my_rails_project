@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:900" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/one-page-wonder.min.css" rel="stylesheet">
   </head>
 
   <body>
@@ -69,7 +72,7 @@
     </nav>
 
     <div class="jumbotron">
-      <div class="w3-container">
+      <div class="container">
         <%= yield %>
         <% flash.each do |key, value| %>
           <div class="alert alert-<%= key %>"><%= value %></div>

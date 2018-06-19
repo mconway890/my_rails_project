@@ -1,12 +1,14 @@
-<div class="jumbotron">
-  <div class="container">
-<h2>Recipes</h2>
-<% @recipes.each do |r| %>
-  <ul>
-    <li><%= link_to r.name, recipe_path(r) %></li>
-  </ul>
+<section>
+  <table id="recipes-list">
+    <tr>
+      <th>Recipe Name</th>
+    </tr>
+    <% @recipes.each do |r| %>
+    <tr>
+      <td><%= link_to r.name, recipe_path(r) %></td>
+    </tr>
 <% end %>
-
-<%= link_to 'Add New Recipe', new_recipe_path %>
-</div>
-</div>
+</table>
+<br>
+<%= button_to 'Add New Recipe', new_recipe_path, :method => :get %>
+</section>

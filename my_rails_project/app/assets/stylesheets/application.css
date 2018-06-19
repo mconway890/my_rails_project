@@ -71,7 +71,7 @@ nav.navbar.navbar-default.navbar-fixed-top {
 }
 
 .navbar-default .navbar-brand:hover {
-  color: #c7b6b6;
+  color: white;
 }
 
 .nav.navbar-nav.navbar-right>li>a {
@@ -85,6 +85,7 @@ nav.navbar.navbar-default.navbar-fixed-top {
 .nav.navbar-nav>li>a {
   color: white;
 }
+
 .nav.navbar-nav>li>a:hover {
   color: #c7b6b6;
 }
@@ -104,28 +105,89 @@ nav.navbar.navbar-default.navbar-fixed-top {
 /* JUMBOTRON */
 
 div.jumbotron {
-  /*background-image: url("vegetables-wallpaper.jpg");
+  background-image: url("Fork-and-Spoon.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
-  background-position: center;*/
+  background-position: center;
   margin-bottom: 0px;
-  height: 600px;
-  z-index: -1;
+  height: -webkit-fill-available;
+  margin-top: 50px;
+  overflow: auto;
+}
+
+h1.masthead-heading.mb-0 {
+  font-family: 'Catamaran', sans-serif;
+  color: white;
+}
+
+h2.masthead-subheading.mb-0 {
+  font-family: 'Catamaran', sans-serif;
+  color: white;
+}
+
+header.masthead.text-center.text-white {
+  margin-top: 90px;
+  margin-bottom: 10px;
 }
 
 /* MAIN */
 
+.container.center {
+  margin-top: 30px;
+  width: fit-content;
+  border: 3px solid #3c5898;
+  padding: 10px 30px 30px 30px;
+  background-color: #eeeeeee8;
+}
 
+section {
+  margin: auto;
+  width: 50%;
+  border: 3px solid #3c5898;
+  padding: 10px;
+  background-color: white;
+}
+
+input[type=text] {
+  width: 100%;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
 
 .alert {
-  margin-bottom: 0px;
-  color: red;
+  margin: auto;
+  color: #3c5898;
+  text-align: center;
+  background-color: white;
+  width: fit-content;
 }
 
 #error_explanation h2, li {
   font-size: 13px;
-  color: red;
+  color: #3c5898;
+}
+
+#recipes-list {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#recipes-list td, #recipes-list th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#recipes-list tr:nth-child(even){background-color: #f2f2f2;}
+
+#recipes-list tr:hover {background-color: #ddd;}
+
+#recipes-list th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4266b2;
+    color: white;
 }
 
 /* FOOTER */

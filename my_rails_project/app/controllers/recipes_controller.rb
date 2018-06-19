@@ -6,6 +6,7 @@ class RecipesController < ApplicationController
   def new
     @user = current_user
     @recipe = Recipe.new
+    @ingredients = 3.times.collect { @recipe.recipe_ingredients.build }
   end
 
   def create
@@ -13,8 +14,9 @@ class RecipesController < ApplicationController
       r.user = current_user
     end
     if @recipe.save
+      @recipe.add_ingredients_to_recipe(recipe_ingredient_params)
       flash[:success] = "Recipe added successfully!"
-      redirect_to @recipe
+      redirect_to recipe_path(@recipe)
     else
       render 'new'
     end
@@ -31,6 +33,7 @@ class RecipesController < ApplicationController
   def update
     @recipe = Recipe.find(params[:id])
     if @recipe.update(recipe_params)
+      @recipe.add_ingredients_to_recipe(recipe_ingredient_params)
       flash[:notice] = 'Recipe was successfully updated.'
       redirect_to @recipe
     else
@@ -47,5 +50,9 @@ class RecipesController < ApplicationController
   private
   def recipe_params
     params.require(:recipe).permit(:name, :prep_time, :cook_time, :user_id)
+  end
+
+  def recipe_ingredient_params
+    params.require(:recipe).permit(recipe_ingredients_attributes: [:quantity, :ingredient_id, ingredient: [:name]])
   end
 end

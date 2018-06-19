@@ -1,15 +1,12 @@
-<h2><%= @recipe.name %></h2>
-<p>Prep Time: <%= @recipe.prep_time %> minutes </p>
-<p>Cook Time: <%= @recipe.cook_time %> minutes </p>
-<h3>Ingredients :</h3>
-<% @recipe.ingredients.each do |i| %>
-<ul>
-  <li><%= i.name %></li>
-</ul>
-<% end %>
-<br>
-<%= link_to 'Add Ingredients', new_recipe_ingredient_path(@recipe) %> |
-<%= link_to 'Edit Recipe', edit_recipe_path(@recipe) %> |
-<%= link_to 'Remove Recipe', @recipe, :method => :delete, :confirm => "Are you sure ?"%>
-<hr>
-<%= link_to 'Go Back', recipes_path %>
+<section>
+  <h2><%= @recipe.name %></h2>
+  <p>Prep Time: <%= @recipe.prep_time %> minutes </p>
+  <p>Cook Time: <%= @recipe.cook_time %> minutes </p>
+  <br>
+  <%= render 'ingredients/list_ingredients', recipe: @recipe %>
+  <%= link_to 'Add Ingredients', new_ingredient_path %> |
+  <%= link_to 'Edit Recipe', edit_user_recipe_path(@recipe) %> |
+  <%= link_to 'Remove Recipe', @recipe, :method => :delete, :confirm => "Are you sure ?"%>
+  <hr>
+  <%= link_to 'Go Back', recipes_path %>
+</section>
