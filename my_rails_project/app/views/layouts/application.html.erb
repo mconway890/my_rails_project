@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Catamaran:900" rel="stylesheet">
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/one-page-wonder.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
   <body>
@@ -75,7 +76,7 @@
       <div class="container">
         <%= yield %>
         <% flash.each do |key, value| %>
-          <div class="alert alert-<%= key %>"><%= value %></div>
+          <div class="alert alert-<%= key %>"><%= value.upcase %><i class="material-icons">  check_circle</i></div>
         <% end %>
       </div>
     </div>

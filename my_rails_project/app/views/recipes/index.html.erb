@@ -1,14 +1,22 @@
 <section>
+  <header>
+    <h2>Recipes</h2>
+  </header>
   <table id="recipes-list">
     <tr>
       <th>Recipe Name</th>
+      <th>Difficulty</th>
+      <th>Reviews</th>
     </tr>
-    <% @recipes.each do |r| %>
     <tr>
-      <td><%= link_to r.name, recipe_path(r) %></td>
-    </tr>
-<% end %>
-</table>
-<br>
-<%= button_to 'Add New Recipe', new_recipe_path, :method => :get %>
+      <% @recipes.each do |r| %>
+        <td><%= link_to r.name, recipe_path(r) %></td>
+        <td></td>
+        <td></td>
+      </tr>
+    <% end %>
+  </table>
+  <br>
+  <%= button_to 'Add New Recipe', new_recipe_path, :method => :get %>
+
 </section>

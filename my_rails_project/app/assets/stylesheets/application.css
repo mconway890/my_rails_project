@@ -140,8 +140,14 @@ header.masthead.text-center.text-white {
   background-color: #eeeeeee8;
 }
 
+.container.center>a:hover {
+  text-decoration: none;
+  color: #e24667;
+}
+
 section {
   margin: auto;
+  margin-top: 100px;
   width: 50%;
   border: 3px solid #3c5898;
   padding: 10px;
@@ -158,13 +164,22 @@ input[type=text] {
   margin: auto;
   color: #3c5898;
   text-align: center;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.81);
+  border: 1px solid #73c4b0;
   width: fit-content;
+}
+
+i.material-icons {
+  font-size: inherit;
 }
 
 #error_explanation h2, li {
   font-size: 13px;
   color: #3c5898;
+}
+
+header {
+  text-align: center;
 }
 
 #recipes-list {
