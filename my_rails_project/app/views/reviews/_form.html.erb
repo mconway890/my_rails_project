@@ -1,0 +1,7 @@
+<%= form_for [recipe, review] do |f| %>
+  Difficulty:
+  <%= f.text_field :difficulty %>
+  Review: <br>
+  <%= f.text_area :description %><br>
+  <%= f.submit %>
+<% end %>
