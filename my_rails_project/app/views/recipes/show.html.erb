@@ -6,6 +6,12 @@
   <%= render 'ingredients/list_ingredients', recipe: @recipe %>
   <%= link_to 'Edit Recipe', edit_user_recipe_path(@recipe) %> |
   <%= link_to 'Remove Recipe', @recipe, :method => :delete, :confirm => "Are you sure ?"%>
+  <h3>Reviews</h3>
+  <% @recipe.reviews.each do |r| %>
+  Difficulty: <%= r.difficulty %>
+  Description: <%= r.description %>
+  <% end %>
+  <%= render 'reviews/form', review: @recipe.reviews.new, recipe: @recipe %>
   <hr>
   <%= link_to 'Go Back', recipes_path %>
 </section>
