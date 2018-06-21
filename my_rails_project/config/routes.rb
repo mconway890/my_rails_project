@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   end
 
   resources :recipes do
-    resources :reviews
+    resources :reviews, only: [:new, :create, :show]
   end
+
 
   #resources :recipes do
   #  resources :ingredients

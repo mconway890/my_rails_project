@@ -5,12 +5,13 @@ class ReviewsController < ApplicationController
 
   def create
     if user_signed_in?
-      review = Review.new(review_params)
-      review.recipe = Recipe.find_by(id: params[:id])
-      review.user = current_user
-      if review.save
+      @review = Review.new(review_params)
+      @review.recipe = Recipe.find_by(id: params[:id])
+      @review.user = current_user
+      if @review.save
         flash[:success] = "Review added."
-        redirect_to recipe_path(@recipe.review)
+        @recipe = @review.recipe
+        redirect_to @recipe
       end
     else
       redirect_to new_user_session_path, alert: "You must be logged in to leave a review"
@@ -30,6 +31,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:difficulty, :description)
+    params.require(:review).permit(:difficulty, :description, :recipe_id)
   end
 end
