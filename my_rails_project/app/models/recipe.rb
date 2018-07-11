@@ -5,7 +5,18 @@ class Recipe < ApplicationRecord
   belongs_to :user, :class_name => 'User', :foreign_key => 'user_id'
   validates :name, :prep_time, :cook_time, presence: true
 
-  accepts_nested_attributes_for :ingredients, :recipe_ingredients, :allow_destroy => true
+  def recipe_ingredients_attributes=(params)
+    if self.save
+    params.each do |k, recipe_ingredient|
+        if !recipe_ingredient[:ingredient_id].empty?
+          RecipeIngredient.create(quantity: recipe_ingredient[:quantity], ingredient_id: recipe_ingredient[:ingredient_id], recipe_id: self.id)
+        elsif recipe_ingredient[:ingredient][:name].present?
+          @ingredient = Ingredient.create(name: recipe_ingredient[:ingredient][:name])
+          @recipe_ingredients = RecipeIngredient.create(quantity: recipe_ingredient[:quantity], recipe_id: self.id, ingredient_id: @ingredient.id)
+        end
+      end
+    end
+  end
 
   def delete_ingredients_from_recipe
       ingredients.size.times do

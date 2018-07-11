@@ -25,7 +25,7 @@
 
   <h3>Add Ingredients:</h3>
   <div>
-    <%= f.fields_for :recipe_ingredients, @ingredients do |ri| %>
+    <%= f.fields_for :recipe_ingredients do |ri| %>
     <div>
       <%= ri.fields_for :ingredient, @recipe.ingredients.build do |ingredient| %>
       Name:

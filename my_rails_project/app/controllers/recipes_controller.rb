@@ -13,17 +13,17 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.new(recipe_params) do |r|
-      r.user = current_user
-    end
-    if @recipe.save
-      @recipe.add_ingredients_to_recipe(recipe_ingredient_params)
-      flash[:success] = "Recipe added successfully!"
-      redirect_to recipe_path(@recipe)
-    else
-      render 'new'
-    end
+  @recipe = Recipe.new(recipe_params) do |r|
+    r.user = current_user
   end
+  if @recipe.save
+    @recipe.add_ingredients_to_recipe(recipe_ingredient_params)
+    flash[:success] = "Recipe added successfully!"
+    redirect_to recipe_path(@recipe)
+  else
+    render 'new'
+  end
+end
 
   def show
     @recipe = Recipe.find(params[:id])
@@ -59,4 +59,5 @@ class RecipesController < ApplicationController
   def recipe_ingredient_params
     params.require(:recipe).permit(recipe_ingredients_attributes: [:quantity, :ingredient_id, ingredient: [:name]])
   end
+
 end
