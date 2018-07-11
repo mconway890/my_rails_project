@@ -8,8 +8,13 @@
   <%= link_to 'Remove Recipe', @recipe, :method => :delete, :confirm => "Are you sure ?"%>
   <h3>Reviews</h3>
   <% @recipe.reviews.each do |r| %>
-  Difficulty: <%= r.difficulty %>
-  Description: <%= r.description %>
+  <ul>
+    <li>
+      Difficulty: <%= r.difficulty %><br>
+      Review: <%= r.description %>
+    </li>
+  </ul>
+  <br><br>
   <% end %>
   <%= render 'reviews/form', review: @recipe.reviews.new, recipe: @recipe %>
   <hr>
