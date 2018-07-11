@@ -6,7 +6,10 @@ class RecipesController < ApplicationController
   def new
     @user = current_user
     @recipe = Recipe.new
-    @ingredients = 3.times.collect { @recipe.recipe_ingredients.build }
+    3.times do
+      @recipe_ingredient = @recipe.recipe_ingredients.build
+      @recipe_ingredient.build_ingredient
+    end
   end
 
   def create
@@ -50,7 +53,7 @@ class RecipesController < ApplicationController
 
   private
   def recipe_params
-    params.require(:recipe).permit(:name, :prep_time, :cook_time, :user_id)
+    params.require(:recipe).permit(:name, :prep_time, :cook_time, :user_id, recipe_ingredients_attributes: [:quantity, :ingredient_id, ingredient: [:name]])
   end
 
   def recipe_ingredient_params
