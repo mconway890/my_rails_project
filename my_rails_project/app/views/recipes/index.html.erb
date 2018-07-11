@@ -5,11 +5,13 @@
   <table id="recipes-list">
     <tr>
       <th>Recipe Name</th>
+      <th>Difficulty</th>
       <th>Reviews</th>
     </tr>
     <tr>
       <% @recipes.each do |r| %>
         <td><%= link_to r.name, recipe_path(r) %></td>
+        <td><%= r.reviews.average(:difficulty) %></td>
         <td><%= r.reviews.count %></td>
       </tr>
     <% end %>
