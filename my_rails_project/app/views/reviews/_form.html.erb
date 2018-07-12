@@ -1,9 +1,7 @@
 <%= form_for [@recipe, @review] do |f| %>
   Difficulty: (1-5)
   <%= f.text_field :difficulty %>
-  Instructions: <br>
-  <%= f.text_area :instructions %><br>
   Review: <br>
   <%= f.text_area :description %><br>
-  <%= f.submit %>
+  <%= f.submit "Lets Eat!" %>
 <% end %>

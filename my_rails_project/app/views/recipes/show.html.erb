@@ -3,6 +3,9 @@
   <p>Prep Time: <%= @recipe.prep_time %> minutes </p>
   <p>Cook Time: <%= @recipe.cook_time %> minutes </p>
   <%= render 'ingredients/list_ingredients', recipe: @recipe %>
+  <h3>Instructions: </h3>
+  <%= @recipe.instructions %>
+  <hr>
   <%= render 'reviews/form', review: @recipe.reviews.new, recipe: @recipe %>
   <%= link_to 'Edit Recipe', edit_user_recipe_path(@recipe) %> |
   <%= link_to 'Remove Recipe', @recipe, :method => :delete, :confirm => "Are you sure ?"%>

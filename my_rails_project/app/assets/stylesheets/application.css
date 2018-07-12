@@ -123,11 +123,13 @@ section.recipes p {
 h1.masthead-heading.mb-0 {
   font-family: 'Catamaran', sans-serif;
   color: white;
+  text-shadow: 2px 2px #3c5798;
 }
 
 h2.masthead-subheading.mb-0 {
   font-family: 'Catamaran', sans-serif;
   color: white;
+  text-shadow: 2px 2px #3c5798;
 }
 
 header.masthead.text-center.text-white {
@@ -208,6 +210,10 @@ header {
     text-align: left;
     background-color: #4266b2;
     color: white;
+}
+
+textarea#recipe_instructions {
+    width: -webkit-fill-available;
 }
 
 /* FOOTER */
