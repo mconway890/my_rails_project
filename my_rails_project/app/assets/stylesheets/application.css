@@ -161,6 +161,10 @@ section {
   background-color: white;
 }
 
+section.reviews p {
+  font-size: 14px;
+}
+
 input[type=text] {
   width: 100%;
   margin: 8px 0;
@@ -214,6 +218,13 @@ header {
 
 textarea#recipe_instructions {
     width: -webkit-fill-available;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #3c5798;
 }
 
 /* FOOTER */
