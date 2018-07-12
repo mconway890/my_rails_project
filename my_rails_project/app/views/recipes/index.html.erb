@@ -11,7 +11,7 @@
     <tr>
       <% @recipes.each do |r| %>
         <td><%= link_to r.name, recipe_path(r) %></td>
-        <td><%= r.reviews.average(:difficulty) %></td>
+        <td><%= r.reviews.average(:difficulty).round %></td>
         <td><%= r.reviews.count %></td>
       </tr>
     <% end %>
