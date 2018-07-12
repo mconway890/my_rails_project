@@ -1,4 +1,4 @@
-<h2>Ingredients:</h2>
+<h3>Ingredients:</h3>
 <% @recipe.recipe_ingredients.each do |i| %>
 <p><%= i.quantity %> - <%= i.ingredient.name %></p>
 <% end %>

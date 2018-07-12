@@ -1,22 +1,11 @@
-<section>
-  <h2><%= @recipe.name %></h2>
+<section class="recipes">
+  <h3><%= @recipe.name %></h3>
   <p>Prep Time: <%= @recipe.prep_time %> minutes </p>
   <p>Cook Time: <%= @recipe.cook_time %> minutes </p>
-  <br>
   <%= render 'ingredients/list_ingredients', recipe: @recipe %>
+  <%= render 'reviews/form', review: @recipe.reviews.new, recipe: @recipe %>
   <%= link_to 'Edit Recipe', edit_user_recipe_path(@recipe) %> |
   <%= link_to 'Remove Recipe', @recipe, :method => :delete, :confirm => "Are you sure ?"%>
-  <h3>Reviews</h3>
-  <% @recipe.reviews.each do |r| %>
-  <ul>
-    <li>
-      Difficulty: <%= r.difficulty %><br>
-      Review: <%= r.description %>
-    </li>
-  </ul>
-  <br>
-  <% end %>
-  <%= render 'reviews/form', review: @recipe.reviews.new, recipe: @recipe %>
   <hr>
   <%= link_to 'Go Back', recipes_path %>
 </section>

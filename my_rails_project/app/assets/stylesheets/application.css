@@ -115,6 +115,11 @@ div.jumbotron {
   overflow: auto;
 }
 
+section.recipes p {
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+
 h1.masthead-heading.mb-0 {
   font-family: 'Catamaran', sans-serif;
   color: white;
