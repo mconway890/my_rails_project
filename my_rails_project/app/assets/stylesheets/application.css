@@ -161,8 +161,9 @@ section {
   background-color: white;
 }
 
-section.reviews p {
+section#reviews-section p {
   font-size: 14px;
+  z-index: 1001;
 }
 
 input[type=text] {

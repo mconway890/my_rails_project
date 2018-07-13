@@ -20,12 +20,14 @@
   |
   <%= link_to 'Go Back', recipes_path %>
 </section>
-<section class="reviews">
+<section id="reviews-section">
   <h3>Reviews:</h3>
-  <h4>Difficulty Level: <%= @recipe.reviews.average(:difficulty).round %></h4>
+    <% if @recipe.reviews.empty? %>
+        No Reviews Yet!
+      <% else %>
+      <h4>Difficulty Level - <%= @recipe.reviews.average(:difficulty).round %></h4>
+      <% end %>
   <% @recipe.reviews.each do |r| %>
-    <p>
-      <span class="glyphicon glyphicon-heart-empty"></span>
-      <%= r.description %></p>
+    <p><%= r.description %></p>
   <% end %>
 </section>
