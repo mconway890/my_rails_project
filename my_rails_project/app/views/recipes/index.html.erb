@@ -11,7 +11,11 @@
     <tr>
       <% @recipes.each do |r| %>
         <td><%= link_to r.name, recipe_path(r) %></td>
+        <% if r.reviews.present? %>
         <td><%= r.reviews.average(:difficulty).round %></td>
+        <% else %>
+        <td> 0 </td>
+        <% end %>
         <td><%= link_to r.reviews.count, recipe_path( r , :anchor => "reviews-section") %></td>
       </tr>
     <% end %>
