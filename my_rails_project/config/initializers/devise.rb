@@ -9,7 +9,12 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '7c2532c9d93767696cd64e22e5fff67db0c8d9ec736260836bd39a2bef8d029c54cd3045e9b3e654909de7d43d495ccf5332c3edb45b3a159c6ee296472260ba'
-
+  client_id = Rails.application.secrets[:google_client_id]
+  client_secret = Rails.application.secrets[:google_secret]
+  # Configure Google omniauth with proper scope
+  config.omniauth :google_oauth2, client_id, client_secret, {
+    scope: "contacts.readonly,userinfo.email"
+  }
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
