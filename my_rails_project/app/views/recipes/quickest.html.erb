@@ -1,0 +1,17 @@
+<section>
+  <header>
+    <h2>Recipes</h2>
+  </header>
+  <table id="recipes-list">
+    <tr>
+      <th>Recipe Name</th>
+      <th>Cook Time</th>
+    </tr>
+    <tr>
+      <% @recipes.each do |r| %>
+        <td><%= link_to r.name, recipe_path(r) %></td>
+        <td><%= r.cook_time %></td>
+      </tr>
+    <% end %>
+  </table>
+</section>

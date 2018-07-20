@@ -55,6 +55,11 @@ end
     redirect_to recipes_path
   end
 
+  def quickest
+    @recipes = Recipe.all
+    @recipes = Recipe.quickest
+  end
+
   private
   def recipe_params
     params.require(:recipe).permit(:name, :prep_time, :cook_time, :instructions, :user_id, recipe_ingredients_attributes: [:quantity, :ingredient_id, ingredient: [:name]])
