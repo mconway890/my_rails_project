@@ -1,23 +1,18 @@
+
 # frozen_string_literal: true
 
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+
+   config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET']
+
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '7c2532c9d93767696cd64e22e5fff67db0c8d9ec736260836bd39a2bef8d029c54cd3045e9b3e654909de7d43d495ccf5332c3edb45b3a159c6ee296472260ba'
-  #client_id = Rails.application.secrets[:google_client_id]
-  #client_secret = Rails.application.secrets[:google_secret]
-  # Configure Google omniauth with proper scope
-  config.omniauth :google_oauth2, ENV['CLIENT_ID'], ENV['CLIENT_SECRET'], {
-    scope: "contacts.readonly,userinfo.email"
-  }
-  # ==> Controller configuration
-  # Configure the parent class to the devise controllers.
-  # config.parent_controller = 'DeviseController'
+  # config.secret_key = 'ae6186fbee1608e90121b7ffe23f85862e2e21317a948ad40b7ee5c5eb35ff3ec2b8afb8b8dafd85b2618f06b399afeb0c6510756e4cc65929dbfd6d184accd8'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -119,7 +114,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '9eec5d8b4faef4d740dc36210fe20bc828f961114b2109fc80aad6a879bab45e554e7511dbcfb1c9ba378b7874afe639ed70db7509ab64bdab9bc9e6681cc424'
+  # config.pepper = '59808552695d19cfed41a82e3317fa615e2e1cf87d82de6631ee24ca5f8ce9a196a82fc085c3698dbce3bbf29b09ecfd81cec9acb773f404afd3750cbd563b4d'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false

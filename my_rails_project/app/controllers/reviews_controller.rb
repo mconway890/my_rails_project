@@ -20,15 +20,15 @@ class ReviewsController < ApplicationController
     end
   end
 
-  def edit
-    @review = Review.find_by(id: params[:id])
-  end
+  #def edit
+  #  @review = Review.find_by(id: params[:id])
+  #end
 
-  def update
-    review = Review.find_by(id: params[:id])
-    review.update(review_params)
-    redirect_to recipes_path(review.recipe)
-  end
+  #def update
+  #  review = Review.find_by(id: params[:id])
+  #  review.update(review_params)
+  #  redirect_to recipes_path(review.recipe)
+  #end
 
   private
 

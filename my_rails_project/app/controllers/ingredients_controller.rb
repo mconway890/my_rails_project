@@ -23,7 +23,7 @@ class IngredientsController < ApplicationController
   end
 
   def show
-    @ingredient = Ingredient.find(params[:id])
+    #@ingredient = Ingredient.find(params[:id])
   end
 
   private

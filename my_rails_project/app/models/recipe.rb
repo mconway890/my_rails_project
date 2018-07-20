@@ -5,6 +5,8 @@ class Recipe < ApplicationRecord
   belongs_to :user, :class_name => 'User', :foreign_key => 'user_id'
   validates :name, :prep_time, :cook_time, presence: true
 
+  scope :quickest, -> { where('cook_time <= ?', 20) } 
+
   def recipe_ingredients_attributes=(params)
     if self.save
     params.each do |k, recipe_ingredient|
@@ -25,21 +27,21 @@ class Recipe < ApplicationRecord
     end
   end
 
-  def add_ingredients_to_recipe(params)
-    delete_ingredients_from_recipe
-  params[:recipe_ingredients_attributes].each do |k, recipe_ingredient|
+    def add_ingredients_to_recipe(params)
+      delete_ingredients_from_recipe
+    params[:recipe_ingredients_attributes].each do |k, recipe_ingredient|
 
-    if recipe_ingredient[:ingredient][:name].present?
-      ingredient_name = recipe_ingredient[:ingredient][:name].downcase
-      ingredient = Ingredient.find_or_create_by(name: ingredient_name)
-    elsif recipe_ingredient[:ingredient_id].present?
-      ingredient = Ingredient.find_by(id: recipe_ingredient[:ingredient_id])
+      if recipe_ingredient[:ingredient][:name].present?
+        ingredient_name = recipe_ingredient[:ingredient][:name].downcase
+        ingredient = Ingredient.find_or_create_by(name: ingredient_name)
+      elsif recipe_ingredient[:ingredient_id].present?
+        ingredient = Ingredient.find_by(id: recipe_ingredient[:ingredient_id])
+      end
+
+      if recipe_ingredient[:quantity].present?
+        RecipeIngredient.create(quantity: recipe_ingredient[:quantity], ingredient_id: ingredient.id, recipe_id: self.id )
+      end
+
     end
-
-    if recipe_ingredient[:quantity].present?
-      RecipeIngredient.create(quantity: recipe_ingredient[:quantity], ingredient_id: ingredient.id, recipe_id: self.id )
-    end
-
   end
-end
 end
