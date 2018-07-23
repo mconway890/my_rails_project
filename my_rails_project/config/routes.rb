@@ -11,8 +11,8 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create, :show]
   end
 
-  get 'quickest' => 'recipes#quickest'
+  resources :ingredients
 
-  resources :ingredients, only: [:new, :create, :edit]
+  get 'quickest' => 'recipes#quickest'
 
 end

@@ -14,29 +14,12 @@
     </div>
   <% end %>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Recipe Name:</th>
-        <th>Prep Time:</th>
-        <th>Cook Time:</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          <%= form_for(@recipe) do |f| %>
-          <tr>
-            <td><%= f.text_field :name %></td>
-            <td><%= f.text_field :prep_time %></td>
-            <td><%= f.text_field :cook_time %></td>
-          </tr>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <%= form_for(@recipe) do |f| %>
+  <%= f.text_field :name, placeholder: "Recipe Name" %>
+  <%= f.text_field :prep_time, placeholder: "Prep Time (min.)" %>
+  <%= f.text_field :cook_time, placeholder: "Cook Time (min.)" %>
 
-  <h3>Add Ingredients:</h3>
+  <h3>Ingredients:</h3>
   <div class="ingredients">
     <%= f.fields_for :recipe_ingredients do |ri| %>
     <div>

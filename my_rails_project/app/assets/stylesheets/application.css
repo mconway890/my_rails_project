@@ -172,10 +172,6 @@ input[type=text] {
   box-sizing: border-box;
 }
 
-input#recipe_cook_time, #recipe_prep_time {
-  width: 100%;
-}
-
 .alert {
   margin: auto;
   color: #3c5898;
