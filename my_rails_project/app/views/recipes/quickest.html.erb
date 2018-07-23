@@ -10,7 +10,8 @@
     <tr>
       <% @recipes.each do |r| %>
         <td><%= link_to r.name, recipe_path(r) %></td>
-        <td><%= r.total_time %> min.</td>
+        <td><%= r.total_time %>
+          min.</td>
       </tr>
     <% end %>
   </table>

@@ -4,6 +4,7 @@ class Recipe < ApplicationRecord
   has_many :ingredients, through: :recipe_ingredients
   belongs_to :user, :class_name => 'User', :foreign_key => 'user_id'
   validates :name, :prep_time, :cook_time, presence: true
+  validates :prep_time, :cook_time, numericality: { only_integer: true }
 
   scope :quickest, -> { where('cook_time + prep_time < ?', 20) }
 
@@ -27,9 +28,9 @@ class Recipe < ApplicationRecord
     end
   end
 
-    def add_ingredients_to_recipe(params)
+  def add_ingredients_to_recipe(params)
       delete_ingredients_from_recipe
-    params[:recipe_ingredients_attributes].each do |k, recipe_ingredient|
+      params[:recipe_ingredients_attributes].each do |k, recipe_ingredient|
 
       if recipe_ingredient[:ingredient][:name].present?
         ingredient_name = recipe_ingredient[:ingredient][:name].downcase
@@ -41,7 +42,6 @@ class Recipe < ApplicationRecord
       if recipe_ingredient[:quantity].present?
         RecipeIngredient.create(quantity: recipe_ingredient[:quantity], ingredient_id: ingredient.id, recipe_id: self.id )
       end
-
     end
   end
 

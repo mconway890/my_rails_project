@@ -12,11 +12,7 @@ Rails.application.routes.draw do
   end
 
   get 'quickest' => 'recipes#quickest'
-  #resources :recipes do
-  #  resources :ingredients
-  #end
 
-  resources :ingredients, only: [:new, :create, :show]
+  resources :ingredients, only: [:new, :create, :edit]
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

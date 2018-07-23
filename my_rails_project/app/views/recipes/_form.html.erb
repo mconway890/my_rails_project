@@ -44,7 +44,7 @@
       <%= ingredient.text_field :name, placeholder: "Name" %>
     <% end %>
     Or
-    <%= ri.collection_select :ingredient_id, Ingredient.order('name ASC').all, :id, :name, include_blank: 'Select Ingredient' %>
+    <%= ri.collection_select :ingredient_id, Ingredient.order('name ASC').all, :id, :name_for_select, include_blank: 'Select Ingredient' %>
     <%= ri.text_field :quantity, placeholder: "Quantity" %>
   </div>
 <% end %>

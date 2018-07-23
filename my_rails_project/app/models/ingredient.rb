@@ -4,6 +4,6 @@ class Ingredient < ApplicationRecord
   validates :name, presence: true
 
   def name_for_select
-    name.capitalize
+    name.downcase
   end
 end

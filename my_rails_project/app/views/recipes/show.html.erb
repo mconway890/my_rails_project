@@ -9,17 +9,17 @@
     minutes
   </p>
   <%= render 'ingredients/list_ingredients', recipe: @recipe %>
-  <h3>Instructions:
-  </h3>
-  <%= @recipe.instructions %>
+  <h3>Instructions:</h3>
+    <%= @recipe.instructions %>
   <hr>
-  <%= render 'reviews/form', review: @recipe.reviews.new, recipe: @recipe %>
-  <%= link_to 'Edit Recipe', edit_user_recipe_path(@recipe) %>
-  |
-  <%= link_to 'Remove Recipe', @recipe, :method => :delete, :confirm => "Are you sure ?"%>
-  |
-  <%= link_to 'Go Back', recipes_path %>
+    <%= render 'reviews/form', review: @recipe.reviews.new, recipe: @recipe %>
+    <%= link_to 'Edit Recipe', edit_user_recipe_path(@recipe) %>
+    |
+    <%= link_to 'Remove Recipe', @recipe, :method => :delete, :confirm => "Are you sure ?"%>
+    |
+    <%= link_to 'Go Back', recipes_path %>
 </section>
+
 <section id="reviews-section">
   <h3>Reviews:</h3>
   <% if @recipe.reviews.present? %>

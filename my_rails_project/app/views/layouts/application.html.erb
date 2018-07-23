@@ -14,11 +14,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-.checked {
-    color: orange;
-}
-</style>
   </head>
 
   <body>
@@ -35,44 +30,44 @@
           <a class="navbar-brand" href="/">veggie recipes</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <% if user_signed_in? %>
-              <a href="/">
-                <span class="glyphicon glyphicon-home"></span>
-                Home</a>
-            </li>
-            <li>
-              <a href="/users/<%= current_user.id %>/recipes">
-                <span class="glyphicon glyphicon-apple"></span>
-                Recipes</a>
-            </li>
-            <li>
-              <a href="/users/edit">
-                <span class="glyphicon glyphicon-edit"></span>
-                Edit User</a>
-            </li>
-            <li>
-              <a rel="nofollow" data-method="delete" href="/users/sign_out">
-                <span class="glyphicon glyphicon-log-out"></span>
-                Sign Out</a>
-            </li>
-          </ul>
-        <% else %>
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a href="/users/sign_up">
-                <span class="glyphicon glyphicon-user"></span>
-                Sign Up</a>
-            </li>
-            <li>
-              <a href="/users/sign_in">
-                <span class="glyphicon glyphicon-log-in"></span>
-                Login</a>
-            </li>
-          </ul>
-        <% end %>
-      </div>
+              <% if user_signed_in? %>
+                <a href="/">
+                  <span class="glyphicon glyphicon-home"></span>
+                  Home</a>
+              </li>
+              <li>
+                <a href="/users/<%= current_user.id %>/recipes">
+                  <span class="glyphicon glyphicon-apple"></span>
+                  Recipes</a>
+              </li>
+              <li>
+                <a href="/users/edit">
+                  <span class="glyphicon glyphicon-edit"></span>
+                  Edit User</a>
+              </li>
+              <li>
+                <a rel="nofollow" data-method="delete" href="/users/sign_out">
+                  <span class="glyphicon glyphicon-log-out"></span>
+                  Sign Out</a>
+              </li>
+            </ul>
+          <% else %>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a href="/users/sign_up">
+                  <span class="glyphicon glyphicon-user"></span>
+                  Sign Up</a>
+              </li>
+              <li>
+                <a href="/users/sign_in">
+                  <span class="glyphicon glyphicon-log-in"></span>
+                  Login</a>
+              </li>
+            </ul>
+          <% end %>
+        </div>
       </div>
     </nav>
 
@@ -80,13 +75,17 @@
       <div class="container">
         <%= yield %>
         <% flash.each do |key, value| %>
-          <div class="alert alert-<%= key %>"><%= value.upcase %><i class="material-icons">  check_circle</i></div>
+          <div class="alert alert-<%= key %>"><%= value.upcase %>
+            <i class="material-icons">
+              check_circle</i>
+          </div>
         <% end %>
       </div>
     </div>
     <!-- Footer -->
     <footer class="page-footer">
-      <div class="footer-copyright text-center py-3"> VeggieRecipes © 2018</div>
+      <div class="footer-copyright text-center py-3">
+        VeggieRecipes © 2018</div>
     </footer>
     <!-- Footer -->
   </body>
