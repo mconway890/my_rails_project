@@ -5,12 +5,12 @@
   <table id="recipes-list">
     <tr>
       <th>Recipe Name</th>
-      <th>Cook Time</th>
+      <th>Total Time</th>
     </tr>
     <tr>
       <% @recipes.each do |r| %>
         <td><%= link_to r.name, recipe_path(r) %></td>
-        <td><%= r.cook_time %></td>
+        <td><%= r.total_time %> min.</td>
       </tr>
     <% end %>
   </table>

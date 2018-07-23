@@ -1,6 +1,16 @@
 <%= form_for [@recipe, @review] do |f| %>
-  Difficulty: (1-5)
-  <%= f.text_field :difficulty %>
+  Difficulty:
+  <%= label_tag(:difficulty, 1)%>
+  <%= f.radio_button(:difficulty, 1) %>
+  <%= label_tag(:difficulty, 2)%>
+  <%= f.radio_button(:difficulty, 2) %>
+  <%= label_tag(:difficulty, 3)%>
+  <%= f.radio_button(:difficulty, 3) %>
+  <%= label_tag(:difficulty, 4)%>
+  <%= f.radio_button(:difficulty, 4) %>
+  <%= label_tag(:difficulty, 5)%>
+  <%= f.radio_button(:difficulty, 5) %>
+  <br>
   Review: <br>
   <%= f.text_area :description %><br>
   <%= f.submit "Lets Eat!" %>
