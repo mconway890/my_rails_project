@@ -154,7 +154,7 @@ header.masthead.text-center.text-white {
 
 section {
   margin: auto;
-  margin-top: 100px;
+  margin-top: 40px;
   width: 50%;
   border: 3px solid #3c5898;
   padding: 10px;
@@ -167,9 +167,13 @@ section#reviews-section p {
 }
 
 input[type=text] {
-  width: 100%;
+  width: min-content;
   margin: 8px 0;
   box-sizing: border-box;
+}
+
+input#recipe_cook_time, #recipe_prep_time {
+  width: 100%;
 }
 
 .alert {

@@ -13,34 +13,44 @@
       </ul>
     </div>
   <% end %>
-  <%= form_for(@recipe) do |f| %>
-  Recipe Name:
-  <%= f.text_field :name %><br/>
-  Prep Time :
-  <%= f.text_field :prep_time %>
-  minutes.<br/>
-  Cook Time :
-  <%= f.text_field :cook_time %>
-  minutes.<br/>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Recipe Name:</th>
+        <th>Prep Time:</th>
+        <th>Cook Time:</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <%= form_for(@recipe) do |f| %>
+          <tr>
+            <td><%= f.text_field :name %></td>
+            <td><%= f.text_field :prep_time %></td>
+            <td><%= f.text_field :cook_time %></td>
+          </tr>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
   <h3>Add Ingredients:</h3>
-  <div>
+  <div class="ingredients">
     <%= f.fields_for :recipe_ingredients do |ri| %>
     <div>
       <%= ri.fields_for :ingredient, @recipe.ingredients.build do |ingredient| %>
-      Name:
-      <%= ingredient.text_field :name %>
+      <%= ingredient.text_field :name, placeholder: "Name" %>
     <% end %>
-    Or Select Ingredient:
+    Or
     <%= ri.collection_select :ingredient_id, Ingredient.order('name ASC').all, :id, :name, include_blank: 'Select Ingredient' %>
-    <br>
-    <%= ri.label :name, 'Quantity:' %>
-    <%= ri.text_field :quantity %>
+    <%= ri.text_field :quantity, placeholder: "Quantity" %>
   </div>
 <% end %>
 
-  <h3>Instructions:</h3>
-  <%= f.text_area :instructions %>
+<h3>Instructions:</h3>
+<%= f.text_area :instructions %>
 </div>
 
 <%= f.submit %>
