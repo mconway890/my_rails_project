@@ -5,3 +5,27 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+ingredient_list = [
+  ["Coconut Milk"],
+  ["Pineapple"],
+  ["Quinoa"],
+  ["Almond Milk"],
+  ["Banana"],
+  ["Mixed Berries"],
+  ["Almond Butter"],
+  ["Rolled Oats"],
+  ["Kale"],
+  ["Mango"],
+  ["Orange"],
+  ["Strawberries"],
+  ["Goji Berries"],
+  ["Almond Butter"],
+  ["Coconut Water"],
+  ["Mint"],
+  ["Spinach"]
+]
+
+ingredient_list.each do |i|
+  Ingredient.create( :name => i[0])
+end
