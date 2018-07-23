@@ -5,7 +5,7 @@ class Recipe < ApplicationRecord
   belongs_to :user, :class_name => 'User', :foreign_key => 'user_id'
   validates :name, :prep_time, :cook_time, presence: true
 
-  scope :quickest, -> { where('cook_time <= ?', 20) }
+  scope :quickest, -> { where('cook_time + prep_time < ?', 20) }
 
   def recipe_ingredients_attributes=(params)
     if self.save
