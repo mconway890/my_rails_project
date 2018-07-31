@@ -13,7 +13,7 @@
       </tr>
       <tr>
         <% current_user.reviews.each do |r| %>
-          <td><%= link_to r.recipe.name, r.recipe if r.recipe %>--</td>
+          <td><%= link_to r.recipe.name, r.recipe if r.recipe %></td>
           <td><%= r.description %></td>
         </tr>
       <% end %>
