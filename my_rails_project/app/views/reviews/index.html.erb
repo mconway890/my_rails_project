@@ -1,0 +1,18 @@
+<section>
+  <header>
+    <h3>Reviews by <%= current_user.email %></h3>
+  </header>
+  <table>
+    <tr>
+      <th>Recipe</th>
+      <th>Review</th>
+    </tr>
+    <tr>
+      <% current_user.reviews.each do |r| %>
+        <td><%= link_to r.recipe.name, r.recipe if r.recipe %></td>
+        <td><%= r.description %></td>
+    </tr>
+    <% end %>
+    <hr>
+  </table>
+</section>
