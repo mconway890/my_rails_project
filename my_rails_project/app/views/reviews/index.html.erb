@@ -1,18 +1,23 @@
 <section>
   <header>
-    <h3>Reviews by <%= current_user.email %></h3>
-  </header>
-  <table>
-    <tr>
-      <th>Recipe</th>
-      <th>Review</th>
-    </tr>
-    <tr>
-      <% current_user.reviews.each do |r| %>
-        <td><%= link_to r.recipe.name, r.recipe if r.recipe %></td>
-        <td><%= r.description %></td>
-    </tr>
-    <% end %>
-    <hr>
-  </table>
+    <% if current_user.reviews.empty? %>
+      <h3>No Reviews Yet!</h3>
+    <% else %>
+      <h3>Reviews by
+        <%= current_user.email %></h3>
+    </header>
+    <table>
+      <tr>
+        <th>Recipe</th>
+        <th>Review</th>
+      </tr>
+      <tr>
+        <% current_user.reviews.each do |r| %>
+          <td><%= link_to r.recipe.name, r.recipe if r.recipe %>--</td>
+          <td><%= r.description %></td>
+        </tr>
+      <% end %>
+      <hr>
+    </table>
+  <% end %>
 </section>
