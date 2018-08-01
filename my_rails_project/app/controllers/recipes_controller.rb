@@ -52,7 +52,6 @@ end
   end
 
   def quickest
-    @recipes = Recipe.all
     @recipes = Recipe.quickest
   end
 
