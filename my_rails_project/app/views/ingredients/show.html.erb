@@ -1,6 +1,12 @@
 <section>
-  <h3>Recipes with <%= @ingredient.name %>:</h3>
-  <% @ingredient.recipes.each do |r| %>
-    <li><%= link_to r.name, recipe_path(r) %></li>
+  <% if @ingredient.recipes.empty? %>
+    <h3>No recipes with <%= @ingredient.name%></h3>
+  <% else %>
+    <h3>Recipes with
+      <%= @ingredient.name %>:</h3>
+    <% @ingredient.recipes.each do |r| %>
+      <li><%= link_to r.name, recipe_path(r) %></li>
     <% end %>
+  <% end %>
+  <%= link_to 'Go Back', ingredients_path %>
 </section>
