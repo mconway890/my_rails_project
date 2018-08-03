@@ -49,3 +49,31 @@ avacado_toast_recipe.recipe_ingredients.new(ingredient: avacado, quantity: '1 ri
 avacado_toast_recipe.recipe_ingredients.new(ingredient: seaSalt, quantity: '1 tsp')
 avacado_toast_recipe.recipe_ingredients.new(ingredient: pomegranateSeeds, quantity: '1/3 cup')
 avacado_toast_recipe.save!
+
+##Create Recipe 2
+russetPotatoes = Ingredient.create!(name: 'russet potatoes')
+aquafaba = Ingredient.create!(name: 'aquafaba')
+brusselSprouts = Ingredient.create!(name: 'brussel sprouts')
+oliveOil = Ingredient.create!(name: 'olive oil')
+
+brussel_sprouts_tots = Recipe.create!(
+  user_id: 1,
+  name: 'Baked Brussel Sprout Tater Tots',
+  prep_time: 15,
+  cook_time: 30,
+  instructions: 'Place the peeled potatoes in a saucepan and fill with cold water. Bring to a boil, and continue boiling until the potatoes are just barely cooked through, about 20 minutes.
+                 Preheat the oven to 425 degrees Fahrenheit, and line a baking sheet with parchment paper.
+                 Grate the potato into a mixing bowl using the largest holes on your grater.
+                 In a small bowl, whisk together the aquafaba and sea salt with a fork. Add about half of this mixture to the grated potato and stir.
+                 Add the shredded Brussels sprouts to the bowl along with the rest of the aquafaba mixture. This is just to ensure the salt and aquafaba are distributed evenly, and stir to combine with the potatoes. Taste a pinch of the mixture and add more salt if desired (it wont taste great at this point because of the raw sprouts, but its safe to eat).
+                 By hand, form the mixture into small balls or tater tot shapes, squeezing each one gently to compress it a little bit, and place on the prepared baking sheet. Repeat until the mixture is used up. The baking sheet should be large enough that none of the tots are touching. If needed, use a second baking sheet rather than crowding the first one.
+                 Brush the tops of the Brussels sprout tater tots with a very light coating of olive oil. Sprinkle with additional salt if desired. Bake for 15 minutes, then very gently flip over the tater tots. Bake for another 15-20 minutes or until lightly browned and crisp.
+                 Serve immediately. Leftovers can be stored in an airtight container once completely cooled, and are most successful when reheated in the oven or toaster oven.'
+)
+
+brussel_sprouts_tots.recipe_ingredients.new(ingredient: russetPotatoes, quantity: '2 large')
+brussel_sprouts_tots.recipe_ingredients.new(ingredient: aquafaba, quantity: '3 tbsp')
+brussel_sprouts_tots.recipe_ingredients.new(ingredient: brusselSprouts, quantity: '12 oz')
+brussel_sprouts_tots.recipe_ingredients.new(ingredient: oliveOil, quantity: '2 tsp')
+brussel_sprouts_tots.recipe_ingredients.new(ingredient: seaSalt, quantity: '1 tsp')
+brussel_sprouts_tots.save!
