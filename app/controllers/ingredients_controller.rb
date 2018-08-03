@@ -3,7 +3,7 @@ class IngredientsController < ApplicationController
     if params[:recipe_id]
       @ingredients = Recipe.find(params[:recipe_id]).ingredients
     else
-      @ingredients = Ingredient.all
+      @ingredients = Ingredient.all.order('name ASC')
     end
   end
 
