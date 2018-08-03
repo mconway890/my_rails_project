@@ -3,7 +3,7 @@
 Veggie Recipes is a Ruby on Rails application that allows a user to store all of their favorite recipes. Once created a user can then edit a recipe, add ingredients and reviews to the recipe, and view recipes that are the quickest to make.
 
 # Built With
-* [Ruby on Rails]
+* Ruby on Rails
 
 # Installation
 To install this application use the following steps:
