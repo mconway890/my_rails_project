@@ -1,5 +1,11 @@
 <section>
   <h3>Ingredients:</h3>
+  <hr>
+  <%= form_tag(ingredients_path, method: :get) do %>
+    <%= text_field_tag :term, params[:term] %>
+    <%= submit_tag 'Search', name: nil %>
+  <% end %>
+  <hr>
   <% @ingredients.each do |i| %>
     <ul>
       <li><%= link_to i.name, ingredient_path(i) %></li>

@@ -1,10 +1,6 @@
 class IngredientsController < ApplicationController
   def index
-    if params[:recipe_id]
-      @ingredients = Recipe.find(params[:recipe_id]).ingredients
-    else
-      @ingredients = Ingredient.all.order('name ASC')
-    end
+    @ingredients = Ingredient.search(params[:term])
   end
 
   def new
@@ -35,6 +31,6 @@ class IngredientsController < ApplicationController
 
   private
   def ingredient_params
-    params.require(:ingredient).permit(:name, :quantity, :recipe_id)
+    params.require(:ingredient).permit(:name, :quantity, :recipe_id, :term)
   end
 end

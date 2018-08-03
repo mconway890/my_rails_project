@@ -53,6 +53,9 @@ input[type=submit]:hover {
   border-color: #29487d;
 }
 
+input#term {
+  margin: 0;
+}
 /* NAVBAR */
 
 ul.nav.navbar-nav {
