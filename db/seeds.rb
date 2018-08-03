@@ -20,7 +20,6 @@ ingredient_list = [
   ["Orange"],
   ["Strawberries"],
   ["Goji Berries"],
-  ["Almond Butter"],
   ["Coconut Water"],
   ["Mint"],
   ["Spinach"]
