@@ -1,5 +1,5 @@
 <%= form_for [@recipe, @review] do |f| %>
-Difficulty:
+Difficulty(1-easy, 5-difficult):
 <%= label_tag(:difficulty, 1)%>
 <%= f.radio_button(:difficulty, 1) %>
 <%= label_tag(:difficulty, 2)%>
@@ -14,6 +14,7 @@ Difficulty:
 Review:
 <br>
 <%= f.text_area :description %><br>
+Name: <%= f.text_field :reviewer %><br>
 <%= f.submit %>
 <hr>
 <% end %>
