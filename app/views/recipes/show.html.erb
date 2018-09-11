@@ -24,7 +24,7 @@
   <h3>Reviews:</h3>
   <% if @recipe.reviews.present? %>
     <% @recipe.reviews.each do |r| %>
-      <p><%= r.description %></p>
+      <h5><strong> <%= r.reviewer %><br><%= r.description %></strong><br><%= r.difficulty %><hr></h5>
     <% end %>
   <% end %>
 </section>
