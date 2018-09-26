@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create, :show]
   end
 
+  get 'recipes/:id/recipe_data', to: 'recipes#recipe_data'
+
   resources :ingredients
 
   get 'quickest' => 'recipes#quickest'
