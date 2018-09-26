@@ -27,13 +27,13 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    # render json: @recipe
+    #render json: @recipe
     @review = Review.new
   end
 
   def recipe_data
     recipe = Recipe.find(params[:id])
-    render json: RecipeSerializer.serialize(recipe)
+    render json: recipe.to_json
   end
 
   def edit
