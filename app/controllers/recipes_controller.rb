@@ -13,22 +13,27 @@ class RecipesController < ApplicationController
   end
 
   def create
-  @recipe = Recipe.new(recipe_params) do |r|
-    r.user = current_user
+    @recipe = Recipe.new(recipe_params) do |r|
+      r.user = current_user
+    end
+    if @recipe.save
+      @recipe.add_ingredients_to_recipe(recipe_ingredient_params)
+      flash[:success] = 'Recipe added successfully!'
+      redirect_to recipe_path(@recipe)
+    else
+      render 'new'
+    end
   end
-  if @recipe.save
-    @recipe.add_ingredients_to_recipe(recipe_ingredient_params)
-    flash[:success] = "Recipe added successfully!"
-    redirect_to recipe_path(@recipe)
-  else
-    render 'new'
-  end
-end
 
   def show
     @recipe = Recipe.find(params[:id])
-    render json: @recipe
+    # render json: @recipe
     @review = Review.new
+  end
+
+  def recipe_data
+    recipe = Recipe.find(params[:id])
+    render json: RecipeSerializer.serialize(recipe)
   end
 
   def edit
@@ -57,6 +62,7 @@ end
   end
 
   private
+
   def recipe_params
     params.require(:recipe).permit(:name, :prep_time, :cook_time, :instructions, :user_id, recipe_ingredients_attributes: [:quantity, :ingredient_id, ingredient: [:name]])
   end
@@ -64,5 +70,4 @@ end
   def recipe_ingredient_params
     params.require(:recipe).permit(recipe_ingredients_attributes: [:quantity, :ingredient_id, ingredient: [:name]])
   end
-
 end
