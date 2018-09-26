@@ -26,14 +26,20 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
-    #render json: @recipe
     @review = Review.new
+    @recipe = Recipe.find(params[:id])
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @recipe.to_json(only: [:name, :instructions, :prep_time, :cook_time, :ingredients, :id, :user_id], include: [ user: {
+        only: [:email]}]) }
+      end
   end
 
   def recipe_data
     recipe = Recipe.find(params[:id])
-    render json: recipe.to_json
+    render json: recipe.to_json(only: [:name, :instructions, :prep_time, :cook_time, :ingredients, :id, :user_id], include: [ user: {
+      only: [:email]
+      }])
   end
 
   def edit

@@ -1,5 +1,5 @@
 <h3>Ingredients:</h3>
   <% @recipe.recipe_ingredients.each do |i| %>
-    <p><%= i.quantity %> - <%= i.ingredient.name if i.ingredient %></p>
+    <p class="recipeIngredients"><%= i.quantity %> - <%= i.ingredient.name if i.ingredient %></p>
   <% end %>
 <br>

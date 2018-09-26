@@ -1,5 +1,10 @@
 <section class="recipes">
-  <a href="#" class="js-next" data-id="<%=@recipe.id%>">Next...</a>
+  <!-- <% if @recipe.user.present? %>
+    <div class="userEmail">Added by: <%= @recipe.user.email %></div>
+  <% else %>
+    <div>Added by Anonyomous</div>
+  <% end %> -->
+  <a href="#" class="js-next" data-id="<%=@recipe.id%>">Next Recipe...</a>
   <h3 class="recipeName"><%= @recipe.name %></h3>
   <p class="recipePrep">Prep Time:
     <%= @recipe.prep_time %>
@@ -10,8 +15,8 @@
     minutes
   </p>
   <%= render 'ingredients/list_ingredients', recipe: @recipe %>
-  <h3 class="recipeBody">Instructions:</h3>
-    <%= @recipe.instructions %>
+  <h3>Instructions:</h3>
+    <p class="recipeBody"><%= @recipe.instructions %></p>
   <hr>
     <%= render 'reviews/form', review: @recipe.reviews.new, recipe: @recipe %>
     <%= link_to 'Edit Recipe', edit_user_recipe_path(@recipe) %>
@@ -34,12 +39,13 @@
 $(function () {
   $(".js-next").on("click", function(e) {
     var nextId = parseInt($(".js-next").attr("data-id")) + 1;
-    $.getJSON("/recipes/" + nextId + "/recipe_data", function(data) {
-      $(".recipeName").text(data["recipe"]["name"]);
+    $.get("/recipes/" + nextId + ".json", function(data) {
+      //$(".userEmail").text(data["user"]["email"]);
+      $(".recipeName").text(data["name"]);
       $(".recipePrep").text(data["prep_time"]);
       $(".recipeCook").text(data["cook_time"]);
       $(".recipeBody").text(data["instructions"]);
-      // re-set the id to current on the link
+      $(".recipeIngredients").text(data["ingredients"]);
       $(".js-next").attr("data-id", data["id"]);
     });
     e.preventDefault();
