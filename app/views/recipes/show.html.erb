@@ -42,8 +42,8 @@ $(function () {
     $.get("/recipes/" + nextId + ".json", function(data) {
       //$(".userEmail").text(data["user"]["email"]);
       $(".recipeName").text(data["name"]);
-      $(".recipePrep").text(data["prep_time"]);
-      $(".recipeCook").text(data["cook_time"]);
+      $(".recipePrep").text(data["prep_time"]).prepend("Prep Time: ").append(" minutes");
+      $(".recipeCook").text(data["cook_time"]).prepend("Cook Time: ").append(" minutes");
       $(".recipeBody").text(data["instructions"]);
       $(".recipeIngredients").text(data["ingredients"]);
       $(".js-next").attr("data-id", data["id"]);
