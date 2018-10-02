@@ -21,13 +21,20 @@
     </table>
   <% end %>
 </section> -->
+
+<section>
+<header>
 <% if current_user.reviews.empty? %>
   <h3>No Reviews Yet!</h3>
 <% else %>
+<h3>Reviews by
+  <%= current_user.email %></h3>
+</header>
   <% current_user.reviews.each do |review| %>
     <%= render partial: "review", locals: {review: review} %>
   <% end %>
 <% end %>
+</section>
 
 <script type="text/javascript" charset="utf-8">
 $(function () {
@@ -35,7 +42,8 @@ $(function () {
     var id = $(this).data("id");
     $.get("/reviews/" + id + "/review_data", function(data) {
       // Replace text of body-id div
-      $("#body-" + id).html(data["description"]);
+      $("#body-" + id).html(data["description"]).toggle();
+      // $("reviewDiv").toggle();
     });
   });
 });
