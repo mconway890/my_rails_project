@@ -1,0 +1,5 @@
+<section>
+<h4><%= link_to review.recipe.name, review.recipe if review.recipe %></h4>
+<p id="body-<%= review.id %>"></p>
+ <button class="js-review" data-id="<%= review.id %>">Review</button>
+</section>

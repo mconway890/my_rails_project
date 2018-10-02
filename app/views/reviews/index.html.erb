@@ -1,4 +1,4 @@
-<section>
+<!-- <section>
   <header>
     <% if current_user.reviews.empty? %>
       <h3>No Reviews Yet!</h3>
@@ -14,10 +14,29 @@
       <tr>
         <% current_user.reviews.each do |r| %>
           <td><%= link_to r.recipe.name, r.recipe if r.recipe %></td>
-          <td><%= r.description %></td>
+          <td><button class="js-review" data-id="<% r.id %>">Read Review</button></td>
         </tr>
       <% end %>
       <hr>
     </table>
   <% end %>
-</section>
+</section> -->
+<% if current_user.reviews.empty? %>
+  <h3>No Reviews Yet!</h3>
+<% else %>
+  <% current_user.reviews.each do |review| %>
+    <%= render partial: "review", locals: {review: review} %>
+  <% end %>
+<% end %>
+
+<script type="text/javascript" charset="utf-8">
+$(function () {
+  $(".js-review").on('click', function() {
+    var id = $(this).data("id");
+    $.get("/reviews/" + id + "/review_data", function(data) {
+      // Replace text of body-id div
+      $("#body-" + id).html(data["description"]);
+    });
+  });
+});
+</script>

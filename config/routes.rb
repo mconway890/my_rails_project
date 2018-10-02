@@ -16,4 +16,6 @@ Rails.application.routes.draw do
 
   get 'quickest' => 'recipes#quickest'
 
+  get 'reviews/:id/review_data', to: 'reviews#review_data'
+
 end
