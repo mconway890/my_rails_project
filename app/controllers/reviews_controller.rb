@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  before_action :set_recipe
+
   def new
     @review = Review.new
   end
@@ -26,6 +28,10 @@ class ReviewsController < ApplicationController
   end
 
   private
+
+  def set_recipe
+      @recipe = Recipe.find(params[:recipe_id])
+  end
 
   def review_params
     params.require(:review).permit(:difficulty, :description, :reviewer, :recipe_id)
