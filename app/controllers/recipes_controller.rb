@@ -1,10 +1,6 @@
 class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
-    @recipe = Recipe.new
-  end
-
-  def new
     @user = current_user
     @recipe = Recipe.new
     5.times do
@@ -18,7 +14,7 @@ class RecipesController < ApplicationController
       r.user = current_user
     end
     if @recipe.save
-      # @recipe.add_ingredients_to_recipe(recipe_ingredient_params)
+      @recipe.add_ingredients_to_recipe(recipe_ingredient_params)
       flash[:success] = "Recipe added successfully!"
       respond_to do |format|
         format.html { redirect_to recipes_path }
