@@ -1,4 +1,11 @@
 <li>
-  <%= recipe.name %><br>
-  <%= link_to "remove recipe", recipe_path(recipe), method: 'delete' %>
+  <%= link_to recipe.name, recipe_path(recipe) %> |
+  <% if recipe.reviews.present? %>
+  Difficulty: <%= recipe.reviews.average(:difficulty).round %> |
+  Reviews: <%= link_to recipe.reviews.count, recipe_path( recipe , :anchor => "reviews-section") %>
+  <% else %>
+      No Reviews
+  <% end %>
+  <br>
+  <%= button_to "Delete", recipe_path(recipe), method: 'delete' %>
 </li>

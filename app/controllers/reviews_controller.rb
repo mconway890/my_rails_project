@@ -30,7 +30,9 @@ class ReviewsController < ApplicationController
   private
 
   def set_recipe
+    if @recipe.present?
       @recipe = Recipe.find(params[:recipe_id])
+    end
   end
 
   def review_params
