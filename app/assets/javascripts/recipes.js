@@ -1,7 +1,6 @@
 $(function(){
   $("form").submit(function(e){
     e.preventDefault();
-    debugger;
     var action = $(this).attr('action');
     var method = $(this).attr('method');
     var recipe_name = $(this).find('#recipe_name').val();
@@ -13,6 +12,5 @@ $(function(){
       data: data,
       dataType: 'script'
     })
-    document.getElementById("recipe_form").reset();
   })
 })
