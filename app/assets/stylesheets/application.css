@@ -25,7 +25,7 @@ body {
 }
 
 /* LINKS */
-/*
+
 input[type=submit] {
   background-color: #4267b2;
   border-color: #29487d;
@@ -55,7 +55,7 @@ input[type=submit]:hover {
 
 input#term {
   margin: 0;
-} */
+}
 
 /* NAVBAR */
 
@@ -108,7 +108,7 @@ nav.navbar.navbar-default.navbar-fixed-top {
 }
 
 /* JUMBOTRON */
-/*
+
 div.jumbotron {
   background-image: url("Fork-and-Spoon.jpg");
   background-repeat: no-repeat;
@@ -142,8 +142,7 @@ header.masthead.text-center.text-white {
 } */
 
 /* MAIN */
-
-/* .container.center {
+.container.center {
   margin-top: 30px;
   width: fit-content;
   border: 3px solid #3c5898;
@@ -158,11 +157,9 @@ header.masthead.text-center.text-white {
 
 section {
   margin: auto;
-  margin-top: 40px;
-  width: 50%;
   border: 3px solid #3c5898;
   padding: 10px;
-  background-color: white;
+  background-color: #ffffffed;
 }
 
 section#reviews-section p {
@@ -230,7 +227,7 @@ hr {
     margin-bottom: 20px;
     border: 0;
     border-top: 1px solid #3c5798;
-} */
+}
 
 /* FOOTER */
 
