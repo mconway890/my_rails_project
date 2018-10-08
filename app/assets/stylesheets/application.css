@@ -14,7 +14,7 @@
  *= require_self
  */
 
-/* body {
+body {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
@@ -22,7 +22,7 @@
   background-color: #eee;
   margin: 0;
   padding: 30px 0 0;
-} */
+}
 
 /* LINKS */
 /*
@@ -56,8 +56,9 @@ input[type=submit]:hover {
 input#term {
   margin: 0;
 } */
+
 /* NAVBAR */
-/*
+
 ul.nav.navbar-nav {
   float: right;
 }
@@ -104,7 +105,7 @@ nav.navbar.navbar-default.navbar-fixed-top {
   top: 0;
   width: 100%;
   overflow: hidden;
-} */
+}
 
 /* JUMBOTRON */
 /*
@@ -233,7 +234,7 @@ hr {
 
 /* FOOTER */
 
-/* .page-footer {
+.page-footer {
   background-color: #3c5898;
   color: #fff;
   position: fixed;
@@ -241,4 +242,4 @@ hr {
   bottom: 0;
   width: 100%;
   text-align: center;
-} */
+}
