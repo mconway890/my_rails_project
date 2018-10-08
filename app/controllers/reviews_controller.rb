@@ -13,7 +13,10 @@ class ReviewsController < ApplicationController
       if @review.save
         flash[:success] = "Review added."
         @recipe = @review.recipe
-        redirect_to @recipe
+        respond_to do |format|
+          format.html { redirect_to @recipe }
+          format.js { }
+        end
       else
         redirect_back(fallback_location: root_path)
       end
