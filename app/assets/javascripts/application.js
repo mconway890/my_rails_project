@@ -11,6 +11,6 @@
 // about supported directives.
 //
 //= require recipes
-//= require rails-ujs
+//= require reviews
 //= require turbolinks
 //= require_tree .
