@@ -14,7 +14,7 @@
  *= require_self
  */
 
-body {
+/* body {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
@@ -22,10 +22,10 @@ body {
   background-color: #eee;
   margin: 0;
   padding: 30px 0 0;
-}
+} */
 
 /* LINKS */
-
+/*
 input[type=submit] {
   background-color: #4267b2;
   border-color: #29487d;
@@ -55,9 +55,9 @@ input[type=submit]:hover {
 
 input#term {
   margin: 0;
-}
+} */
 /* NAVBAR */
-
+/*
 ul.nav.navbar-nav {
   float: right;
 }
@@ -104,10 +104,10 @@ nav.navbar.navbar-default.navbar-fixed-top {
   top: 0;
   width: 100%;
   overflow: hidden;
-}
+} */
 
 /* JUMBOTRON */
-
+/*
 div.jumbotron {
   background-image: url("Fork-and-Spoon.jpg");
   background-repeat: no-repeat;
@@ -138,11 +138,11 @@ h2.masthead-subheading.mb-0 {
 header.masthead.text-center.text-white {
   margin-top: 90px;
   margin-bottom: 10px;
-}
+} */
 
 /* MAIN */
 
-.container.center {
+/* .container.center {
   margin-top: 30px;
   width: fit-content;
   border: 3px solid #3c5898;
@@ -229,11 +229,11 @@ hr {
     margin-bottom: 20px;
     border: 0;
     border-top: 1px solid #3c5798;
-}
+} */
 
 /* FOOTER */
 
-.page-footer {
+/* .page-footer {
   background-color: #3c5898;
   color: #fff;
   position: fixed;
@@ -241,4 +241,4 @@ hr {
   bottom: 0;
   width: 100%;
   text-align: center;
-}
+} */
