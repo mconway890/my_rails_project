@@ -17,5 +17,6 @@ $(function(){
       data: data,
       dataType: 'script'
     })
+    document.getElementById("recipe_form").reset();
   })
 })
