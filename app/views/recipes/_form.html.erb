@@ -14,7 +14,7 @@
     </div>
   <% end %>
 
-  <%= form_for(@recipe) do |f| %>
+  <%= form_for @recipe, html: {id: :recipe_form} do |f| %>
   <%= f.text_field :name, placeholder: "Recipe Name" %>
   <%= f.text_field :prep_time, placeholder: "Prep Time (min.)" %>
   <%= f.text_field :cook_time, placeholder: "Cook Time (min.)" %>

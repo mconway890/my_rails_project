@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
+    @recipe = Recipe.new
   end
 
   def new
@@ -13,17 +14,20 @@ class RecipesController < ApplicationController
   end
 
   def create
-  @recipe = Recipe.new(recipe_params) do |r|
-    r.user = current_user
+    @recipe = Recipe.new(recipe_params) do |r|
+      r.user = current_user
+    end
+    if @recipe.save
+      # @recipe.add_ingredients_to_recipe(recipe_ingredient_params)
+      flash[:success] = "Recipe added successfully!"
+      respond_to do |format|
+        format.html { redirect_to recipe_path(@recipe) }
+        format.js { }
+      end
+    else
+      render 'new'
+    end
   end
-  if @recipe.save
-    @recipe.add_ingredients_to_recipe(recipe_ingredient_params)
-    flash[:success] = "Recipe added successfully!"
-    redirect_to recipe_path(@recipe)
-  else
-    render 'new'
-  end
-end
 
   def show
     @recipe = Recipe.find(params[:id])
