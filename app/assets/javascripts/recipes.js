@@ -5,7 +5,7 @@ $(function() {
     //Get action and method from form itself - this
     let action = $(this).attr('action');
     let method = $(this).attr('method');
-    //Store form values in letiables to be passed in Ajax request
+    //Store form values in variables to be passed in Ajax request
     let recipe_name = $(this).find('#recipe_name').val();
     //JQuery method to turn form data into object we can use in Ajax call
     let data = $(this).serializeArray();
