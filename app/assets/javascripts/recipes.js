@@ -1,6 +1,7 @@
 $(function(){
   //Listen for submission of the form
   $("form").submit(function(e){
+    e.preventDefault();
     //Get action and method from form itself - this
     var action = $(this).attr('action');
     var method = $(this).attr('method');
@@ -15,6 +16,5 @@ $(function(){
       data: data,
       dataType: 'script'
     })
-    e.preventDefault();
   })
 })
