@@ -12,5 +12,6 @@
 //
 //= require recipes
 //= require reviews
+//= require rails-ujs
 //= require turbolinks
 //= require_tree .
