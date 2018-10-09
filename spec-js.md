@@ -4,7 +4,7 @@ Specs:
 - [x] Use jQuery for implementing new requirements
       <!-- jQuery val(), serializeArray(), find(), attr() -->
 - [x] Include a show resource rendered using jQuery and an Active Model Serialization JSON backend.
-      <!-- reviews show on page after submission without refresh -->
+      <!-- reviews show on page after submission without refresh, time saving recipes rendered using jQuery on recipes index -->
 - [x] Include an index resource rendered using jQuery and an Active Model Serialization JSON backend.
       <!-- recipes index page rendered using jQuery -->
 - [x] Include at least one has_many relationship in information rendered via JSON and appended to the DOM.
