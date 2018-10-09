@@ -2,7 +2,7 @@
   <%= link_to recipe.name, recipe_path(recipe) %> |
   <% if recipe.reviews.present? %>
   Difficulty: <%= recipe.reviews.average(:difficulty).round %> |
-  Reviews: <%= link_to recipe.reviews.count, recipe_path( recipe , :anchor => "reviews-section") %>
+  Reviews: <%= recipe.reviews.count %>
   <% else %>
       No Reviews
   <% end %>
