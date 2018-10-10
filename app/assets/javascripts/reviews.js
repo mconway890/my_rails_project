@@ -21,3 +21,19 @@ $(function(){
     })
   })
 })
+
+// Js model object with method added to prototype
+// function Review(reviewer, description, difficulty) {
+//   this.reviewer = reviewer;
+//   this.description = description;
+//   this.difficulty = difficulty;
+// }
+//
+// Review.prototype.fullReview = function() {
+//   console.log(`Review by: ${this.reviewer} | Description: ${this.description} | Difficulty: ${this.difficulty}`);
+// }
+//
+// let m = new Review('Michele','delicious!', 2);
+// m.fullReview();
+// Review by: Michele | Description: so delicious! | Difficulty: 2
+//
