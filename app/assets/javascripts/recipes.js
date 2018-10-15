@@ -15,11 +15,14 @@ $(function() {
       url: action,
       data: data,
       dataType: 'script'
+    }).then(function(result){
+      return alert('Recipe Added!')
+    }).catch(function(result){
+      return alert('Error!')
     })
     document.getElementById('recipe_form').reset();
   })
 })
-
 
 function timeSavers() {
   $('#quick').load('quickest.html #quick')

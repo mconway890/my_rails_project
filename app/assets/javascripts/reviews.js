@@ -17,8 +17,10 @@ $(function(){
       url: action,
       data: data,
       dataType: 'script'
-      //Prevent duplicate form submissions
-      //return false;
+    }).then(function(result){
+      return alert('Review Added!')
+    }).catch(function(result){
+      return alert('Error!')
     })
     document.getElementById('review_form').reset();
   })
