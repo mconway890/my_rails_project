@@ -32,8 +32,23 @@ class RecipesController < ApplicationController
 
   def edit
     @recipe = Recipe.find(params[:id])
-    if @recipe.ingredients.length < 5
-      5.times do
+    if @recipe.ingredients.length === 1
+      4.times do
+        @recipe_ingredient = @recipe.recipe_ingredients.build
+        @recipe_ingredient.build_ingredient
+      end
+    elsif @recipe.ingredients.length === 2
+      3.times do
+        @recipe_ingredient = @recipe.recipe_ingredients.build
+        @recipe_ingredient.build_ingredient
+      end
+    elsif @recipe.ingredients.length === 3
+      2.times do
+        @recipe_ingredient = @recipe.recipe_ingredients.build
+        @recipe_ingredient.build_ingredient
+      end
+    elsif @recipe.ingredients.length === 4
+      1.time do
         @recipe_ingredient = @recipe.recipe_ingredients.build
         @recipe_ingredient.build_ingredient
       end
