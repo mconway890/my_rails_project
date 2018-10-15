@@ -6,5 +6,4 @@
    + render messages with JS?
 
 -Add Edit button to recipes index
-   + in recipes controller edit method, only build ingredient amount needed
    + Uncaught ReferenceError: Turbolinks is not defined (but update and destroy still happening)
