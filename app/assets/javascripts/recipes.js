@@ -1,6 +1,6 @@
 $(function() {
   //Listen for submission of the form
-  $("form").submit(function(e) {
+  $("#recipe_form").submit(function(e) {
     e.preventDefault();
     //Get action and method from form itself - this
     let action = $(this).attr('action');
@@ -16,6 +16,7 @@ $(function() {
       data: data,
       dataType: 'script'
     })
+    document.getElementById('recipe_form').reset();
   })
 })
 

@@ -18,8 +18,9 @@ $(function(){
       data: data,
       dataType: 'script'
       //Prevent duplicate form submissions
-      return false;
+      //return false;
     })
+    document.getElementById('review_form').reset();
   })
 })
 
