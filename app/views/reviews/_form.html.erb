@@ -1,4 +1,4 @@
-<%= form_for [@recipe, @review] do |f| %>
+<%= form_for [@recipe, @review], html: {id: :review_form} do |f| %>
 Difficulty(1-easy, 5-difficult):
 <%= label_tag(:difficulty, 1)%>
 <%= f.radio_button(:difficulty, 1) %>
