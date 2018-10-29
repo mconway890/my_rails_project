@@ -16,28 +16,34 @@ $(function(){
       method: method,
       url: action,
       data: data,
-      dataType: 'script'
-    }).then(function(result){
-      return alert('Review Added!')
-    }).catch(function(result){
-      return alert('Error!')
+      dataType: 'script',
+      // on success update DOM with response in the form of data
+      success: function(resp) {
+        let review = new Review(resp);
+        review.renderReviews();
+      }
     })
     document.getElementById('review_form').reset();
   })
 })
 
-// Js model object with method added to prototype
-function Review(reviewer, description, difficulty) {
-  this.reviewer = reviewer;
-  this.description = description;
-  this.difficulty = difficulty;
-}
+// The new reviews response is passed as data and set to this
+function Review(data) {
+  this.id = data.id;
+  this.description = data.description;
+  this.difficulty = data.difficulty;
+  this.reviewer = data.reviewer;
+};
 
-Review.prototype.fullReview = function() {
-  console.log(`Review by: ${this.reviewer} | Description: ${this.description} | Difficulty: ${this.difficulty}`);
-}
-//
-// let m = new Review('Michele','delicious!', 2);
-// m.fullReview();
-// Review by: Michele | Description: so delicious! | Difficulty: 2
-//
+// // Prototype method appends the html to the div
+Review.prototype.renderReviews = function() {
+  let html = "";
+  html +=
+  `<br>
+  <div>
+      <h6>Posted by: ${this.reviewer} </h6>
+      <p>${this.description} - ${this.difficulty}</p>
+  </div>`;
+
+  $("#submitted-reviews").append(html);
+};
