@@ -1,5 +1,46 @@
 <section>
   <h3>Edit Recipe</h3>
-    <%= render 'form' %>
+  <div class="field_with_errors">
+    <% if @recipe.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@recipe.errors.count, "error") %>
+          prohibited this recipe from being saved:
+        </h2>
+
+        <ul>
+          <% @recipe.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= form_for @recipe, html: {id: :recipe_edit_form} do |f| %>
+    <%= f.text_field :name, placeholder: "Recipe Name" %>
+    <%= f.text_field :prep_time, placeholder: "Prep Time (min.)" %>
+    <%= f.text_field :cook_time, placeholder: "Cook Time (min.)" %>
+
+    <h3>Ingredients:</h3>
+    <div class="ingredients">
+      <%= f.fields_for :recipe_ingredients do |ri| %>
+      <div>
+        <%= ri.fields_for :ingredient, @recipe.ingredients.build do |ingredient| %>
+        <%= ingredient.text_field :name, placeholder: "Name" %>
+      <% end %>
+      Or
+      <%= ri.collection_select :ingredient_id, Ingredient.order('name ASC').all, :id, :name_for_select, include_blank: 'Select Ingredient' %>
+      <%= ri.text_field :quantity, placeholder: "Quantity" %>
+    </div>
+  <% end %>
+
+  <h3>Instructions:</h3>
+  <%= f.text_area :instructions %>
+  </div>
+
+  <%= f.submit %>
+  <% end %>
+  </div>
+  <hr>
     <%= link_to 'Go Back', recipe_path %>
 </section>
