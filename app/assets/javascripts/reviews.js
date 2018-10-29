@@ -35,7 +35,7 @@ function Review(data) {
   this.reviewer = data.reviewer;
 };
 
-// // Prototype method appends the html to the div
+// Prototype method appends the html to the div
 Review.prototype.renderReviews = function() {
   let html = "";
   html +=
