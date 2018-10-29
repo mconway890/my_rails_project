@@ -15,7 +15,7 @@ class RecipesController < ApplicationController
     end
     if @recipe.save
       @recipe.add_ingredients_to_recipe(recipe_ingredient_params)
-      flash[:success] = "Recipe added successfully!"
+      #flash[:success] = "Recipe added successfully!"
       respond_to do |format|
         format.html { redirect_to recipes_path }
         format.js { }

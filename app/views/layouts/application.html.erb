@@ -80,14 +80,14 @@
     </nav>
 
     <div class="jumbotron">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value.upcase %>
+          <i class="material-icons">
+            check_circle</i>
+        </div>
+      <% end %>
       <div class="container">
         <%= yield %>
-        <% flash.each do |key, value| %>
-          <div class="alert alert-<%= key %>"><%= value.upcase %>
-            <i class="material-icons">
-              check_circle</i>
-          </div>
-        <% end %>
       </div>
     </div>
     <!-- Footer -->
