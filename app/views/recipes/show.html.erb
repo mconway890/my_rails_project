@@ -21,8 +21,9 @@
 </section>
 
 <section id="reviews-section">
-  <h3>Reviews:</h3>
-  <ul>
+  <%# <h3>Reviews:</h3> %>
+  <button onclick="renderReviews('review-list')">See Reviews</button>
+  <ul id='review-list' style="display:none;">
     <%= render @recipe.reviews %>
   </ul>
 </section>
