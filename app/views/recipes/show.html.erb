@@ -10,28 +10,33 @@
   </p>
   <%= render 'ingredients/list_ingredients', recipe: @recipe %>
   <h3>Instructions:</h3>
-    <%= @recipe.instructions %>
+  <%= @recipe.instructions %>
   <br>
   <%= link_to 'Edit Recipe', edit_user_recipe_path(@recipe) %>
   |
   <%= link_to 'Remove Recipe', @recipe, :method => :delete %>
   |
   <%= link_to 'Go Back', recipes_path %><br><br>
-    <%= render 'reviews/form', review: @recipe.reviews.new, recipe: @recipe %>
+  <%= render 'reviews/form', review: @recipe.reviews.new, recipe: @recipe %>
 </section>
 
 <section id="reviews-section">
   <button onclick="renderReviews('submitted-reviews')">See Reviews</button>
   <div id="submitted-reviews" style="display:none;">
     <% @recipe.reviews.each do |r| %>
-      <% if r.reviewer != nil %>
-        <h6>Posted by: <%= r.reviewer %></h6>
+      <div class="review-body">
+        <% if r.description != nil %>
+          <li>Description:
+            <%= r.description %><br>
+          <% end %>
+          <% if r.difficulty != nil && r.reviewer != nil %>
+            Difficulty:
+            <%= r.difficulty %><br>
+            Name:
+            <%= r.reviewer %>
+          </li>
+        <% end %>
       <% end %>
-      <% if r.difficulty != nil && r.description != nil %>
-        <p>Difficulty: <%= r.difficulty %><br>
-        <%= r.description %>
-        </p>
-      <% end %>
-    <% end %>
-</div>
+    </div>
+  </div>
 </section>
