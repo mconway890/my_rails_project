@@ -26,7 +26,7 @@ Ingredient.prototype.renderIngredients = function() {
   let html = "";
   html +=
   `<ul>
-    <li id='ingredient-${this.id}'>${this.name}</li>
+    <li id='ingredient-${this.id}'><a href='/ingredients/${this.id}'">${this.name}</a></li>
   </ul>`;
   $("#ingredient_list").append(html);
 }
