@@ -25,11 +25,6 @@ class ReviewsController < ApplicationController
     end
   end
 
-  def review_data
-    @review = Review.find(params[:id])
-    render json: @review, status: 200
-  end
-
   private
 
   def set_recipe
