@@ -1,6 +1,7 @@
 class IngredientsController < ApplicationController
   def index
     @ingredients = Ingredient.search(params[:term])
+    @ingredient = Ingredient.new
   end
 
   def new
@@ -10,8 +11,7 @@ class IngredientsController < ApplicationController
   def create
     @ingredient = Ingredient.new(ingredient_params)
     if @ingredient.save
-      flash[:success] = "Ingredient Added!"
-      redirect_to ingredient_path(@ingredient)
+      render json: @ingredient, status: 201
     else
       flash[:error] = "Error. Ingredient not added."
       render 'new'
