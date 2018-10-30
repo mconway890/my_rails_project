@@ -1,12 +1,12 @@
-<li>
-  <%= link_to recipe.name, recipe_path(recipe) %> |
-  <% if recipe.reviews.present? %>
-  Difficulty: <%= recipe.reviews.average(:difficulty).round %> |
-  Reviews: <%= recipe.reviews.count %>
-  <% else %>
-      No Reviews
-  <% end %>
-  <br>
-  <%= link_to "Delete", recipe_path(recipe), method: 'delete' %>
-  <%= link_to "Edit", edit_recipe_path(recipe) %>
-</li>
+<td><%= link_to recipe.name, recipe_path(recipe) %></td>
+<% if recipe.reviews.present? %>
+  <td><%= recipe.reviews.average(:difficulty).round %></td>
+<% else %>
+  <td>
+    0
+  </td>
+<% end %>
+<td><%= recipe.reviews.count %></td>
+<td><%= link_to "Delete", recipe_path(recipe), method: 'delete' %></td>
+<td><%= link_to "Edit", edit_recipe_path(recipe) %></td>
+</tr>

@@ -3,31 +3,20 @@
     <h2>Recipes</h2>
   </header>
 
-  <ul id="recipes">
-    <%= render @recipes %>
-  </ul>
-  <!-- <table id="recipes-list">
+  <table id="recipes">
     <tr>
       <th>Recipe Name</th>
       <th>Difficulty</th>
       <th>Reviews</th>
+      <th>Delete</th>
+      <th>Edit</th>
     </tr>
     <tr>
-      <% @recipes.each do |r| %>
-        <td><%= link_to r.name, recipe_path(r) %></td>
-        <% if r.reviews.present? %>
-          <td><%= r.reviews.average(:difficulty).round %></td>
-        <% else %>
-          <td>
-            0
-          </td>
-        <% end %>
-        <td><%= link_to r.reviews.count, recipe_path( r , :anchor => "reviews-section") %></td>
-      </tr>
-    <% end %>
-  </table> -->
+    <%= render @recipes %>
+  </table>
+
   <br>
-  <%#= link_to "Time Saving Recipes", quickest_path %>
+
   <button onclick="timeSavers()">Time Saving Recipes</button>
   <div id="quick" style="display:none;"></div>
 </section>
