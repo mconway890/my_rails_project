@@ -1,6 +1,6 @@
 $(function(){
   //Listen for submission of the form
-  $("#review_form").submit(function(e){
+  $("#review_form").on("submit", function(e){
     e.preventDefault();
     //Get action and method from form itself - this
     let action = $(this).attr('action');
@@ -20,30 +20,8 @@ $(function(){
       // on success update DOM with response in the form of data
       success: function(resp) {
         let review = new Review(resp);
-        review.renderReviews();
       }
     })
     document.getElementById('review_form').reset();
   })
 })
-
-// The new reviews response is passed as data and set to this
-function Review(data) {
-  this.id = data.id;
-  this.description = data.description;
-  this.difficulty = data.difficulty;
-  this.reviewer = data.reviewer;
-};
-
-// Prototype method appends the html to the div
-Review.prototype.renderReviews = function() {
-  let html = "";
-  html +=
-  `<br>
-  <div>
-      <h6>Posted by: ${this.reviewer} </h6>
-      <p>${this.description} - ${this.difficulty}</p>
-  </div>`;
-
-  $("#submitted-reviews").append(html);
-};
