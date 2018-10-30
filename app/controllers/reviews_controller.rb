@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
       @review.recipe = Recipe.find_by(id: params[:recipe_id])
       @review.user = current_user
       if @review.save
-        flash[:success] = "Review added."
+        #flash[:success] = "Review added."
         @recipe = @review.recipe
         respond_to do |format|
           format.html { redirect_to @recipe }
