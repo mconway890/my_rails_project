@@ -4,7 +4,12 @@
   <div id="ingredient_list">
     <%= form_tag(ingredients_path, method: :get) do %>
       <%= text_field_tag :term, params[:term] %>
-      <%= submit_tag 'Search', name: nil %>
+      <%= submit_tag 'Search Ingredients', name: nil %>
+    <% end %>
+    OR
+    <%= form_for @ingredient, html: {class: :new_ingredient} do |f| %>
+    <%= f.text_field :name, placeholder: "Ingredient Name" %>
+    <%= f.submit 'Add New Ingredient '%>
     <% end %>
     <hr>
     <% @ingredients.each do |i| %>
