@@ -7,7 +7,7 @@ class Recipe < ApplicationRecord
   validates :prep_time, :cook_time, numericality: { only_integer: true }
   ##validates :ingredients, presence: true
 
-  scope :quickest, -> { where('cook_time + prep_time < ?', 20) }
+  scope :quickest, -> { where('cook_time + prep_time < ?', 21) }
 
   def recipe_ingredients_attributes=(params)
     if self.save
