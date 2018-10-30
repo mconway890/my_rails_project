@@ -12,9 +12,9 @@ Specs:
 - [x] Use your Rails API and a form to create a resource and render the response without a page refresh.
       <!-- form submits recipes and reviews without page refresh -->
 - [x] Translate JSON responses into js model objects.
-      <!-- Upon review submission, review data used to create JS review object -->
+      <!-- Upon new ingredient submission, ingredient data used to create JS ingredient object -->
 - [x] At least one of the js model objects must have at least one method added by your code to the prototype.
-      <!-- Review.prototype.renderReviews - review data passed into renderReviews() and appended to the DOM -->
+      <!-- Ingredient.prototype.renderIngredients - ingredient data passed into renderIngredients() and appended to the DOM -->
 Confirm
 - [x] You have a large number of small Git commits
 - [x] Your commit messages are meaningful
