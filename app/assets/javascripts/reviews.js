@@ -16,11 +16,11 @@ $(function(){
       method: method,
       url: action,
       data: data,
-      dataType: 'script',
-      // on success update DOM with response in the form of data
-      success: function(resp) {
-        let review = new Review(resp);
-      }
+      dataType: 'script'
+    }).then(function(result){
+      return alert('Review Added!')
+    }).catch(function(result){
+      return alert('Error!')
     })
     document.getElementById('review_form').reset();
   })
