@@ -14,21 +14,26 @@ $(function(){
     //default action of the event will not be triggered.
     event.preventDefault();
   })
+  $("#reverse").on("click", function(event) {
+    $.get('/ingredients', function(ingredients) {
+      ingredients.reverse()
+    }, 'json')
+  })
 })
 
-// new ingredient resp passed as data and set to 'this'
-// JS Object Constructor
-function Ingredient(data) {
-  this.id = data.id;
-  this.name = data.name;
-};
+// ES6 class syntax
+class Ingredient{
+  constructor(data) {
+    this.id = data.id;
+    this.name = data.name;
+  }
 
-// append html to div with id 'ingredient_list'
-Ingredient.prototype.renderIngredients = function() {
-  let html = "";
-  html +=
-  `<ul>
-    <li id='ingredient-${this.id}'><a href='/ingredients/${this.id}'">${this.name}</a></li>
-  </ul>`;
-  $("#ingredient_list").append(html);
-}
+  renderIngredients(){
+    let html = "";
+    html +=
+    `<ul>
+      <li id='ingredient-${this.id}'><a href='/ingredients/${this.id}'">${this.name}</a></li>
+    </ul>`;
+    $("#ingredient_list").append(html);
+  }
+};
