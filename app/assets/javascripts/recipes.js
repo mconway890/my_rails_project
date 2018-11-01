@@ -17,6 +17,7 @@ $(function() {
       dataType: 'script'
     }).then(function(result){
       return alert('Recipe Added!')
+      // catch() returns a Promise dealing with rejected cases
     }).catch(function(result){
       return alert('Error!')
     })

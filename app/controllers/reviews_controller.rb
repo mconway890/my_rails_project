@@ -11,11 +11,10 @@ class ReviewsController < ApplicationController
       @review.recipe = Recipe.find_by(id: params[:recipe_id])
       @review.user = current_user
       if @review.save
-        #flash[:success] = "Review added."
         @recipe = @review.recipe
         respond_to do |format|
           format.html { redirect_to @recipe }
-          format.js { }
+          format.js { } #controller method sends back response as js
         end
       else
         redirect_back(fallback_location: root_path)

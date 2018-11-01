@@ -15,10 +15,9 @@ class RecipesController < ApplicationController
     end
     if @recipe.save
       @recipe.add_ingredients_to_recipe(recipe_ingredient_params)
-      #flash[:success] = "Recipe added successfully!"
       respond_to do |format|
         format.html { redirect_to recipes_path }
-        format.js { }
+        format.js { } #controller method sends back response as js
       end
     else
       render 'new'
