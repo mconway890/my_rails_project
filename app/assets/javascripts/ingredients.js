@@ -17,6 +17,7 @@ $(function(){
 })
 
 // new ingredient resp passed as data and set to 'this'
+// JS Object Constructor
 function Ingredient(data) {
   this.id = data.id;
   this.name = data.name;
