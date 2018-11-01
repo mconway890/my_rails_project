@@ -11,6 +11,7 @@ $(function(){
         ingredient.renderIngredients();
       }
     })
+    //default action of the event will not be triggered.
     event.preventDefault();
   })
 })
