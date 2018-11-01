@@ -5,6 +5,7 @@ class IngredientsController < ApplicationController
     respond_to do |format|
       format.html {render :index}
       format.json { render json: @ingredients }
+      # GET /ingredients.json
     end
   end
 
@@ -24,6 +25,11 @@ class IngredientsController < ApplicationController
 
   def show
     @ingredient = Ingredient.find(params[:id])
+    respond_to do |format|
+      format.html {render :show}
+      format.json { render json: @ingredient }
+      # GET /ingredients/1.json
+    end
   end
 
   def edit
