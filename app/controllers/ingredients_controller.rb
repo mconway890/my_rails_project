@@ -2,6 +2,10 @@ class IngredientsController < ApplicationController
   def index
     @ingredients = Ingredient.search(params[:term])
     @ingredient = Ingredient.new
+    respond_to do |format|
+      format.html {render :index}
+      format.json { render json: @ingredients }
+    end
   end
 
   def new
