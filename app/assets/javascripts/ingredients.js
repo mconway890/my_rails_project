@@ -15,11 +15,28 @@ $(function(){
     event.preventDefault();
   })
   $("#reverse").on("click", function(event) {
-    $.get('/ingredients', function(ingredients) {
-      ingredients.reverse()
-    }, 'json')
+    $.get('/ingredients' + '.json', function(data) {
+      reverseIngredients(data);
+    })
+    event.preventDefault();
   })
 })
+
+function reverseIngredients(data){
+  let ingredients = data["ingredients"]
+  let ingredientsDiv = $(".reversed");
+  ingredientsDiv.empty();
+
+  $.each (ingredients, function(i, ingredient){
+    ingredientsDiv.append(
+      `<div>
+        <ul>
+          <li>${ingredient.name}</li>
+        </ul>
+      </div>`
+    )
+  })
+}
 
 // ES6 class syntax
 class Ingredient{
