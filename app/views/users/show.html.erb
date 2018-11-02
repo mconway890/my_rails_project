@@ -1,0 +1,8 @@
+<section>
+  <h3><%= @user.email %> has <%= @user.recipes.count %> recipes</h3>
+  <button class="view-user-recipes" data-id="<%=@user.id%>">View Recipes</button>
+  <div class="container">
+    <div class="usersRecipes">
+    </div>
+  </div>
+</section>
