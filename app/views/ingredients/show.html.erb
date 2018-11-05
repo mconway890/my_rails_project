@@ -1,9 +1,9 @@
-<section>
+<section class="recipes">
   <% if @ingredient.recipes.empty? %>
-    <h3>No recipes with <%= @ingredient.name%></h3>
+    <h4>No recipes with <%= @ingredient.name%></h4>
   <% else %>
-    <h3>Recipes with
-      <%= @ingredient.name %>:</h3>
+    <h4>Recipes with
+      <%= @ingredient.name %>:</h4>
     <% @ingredient.recipes.each do |r| %>
       <li><%= link_to r.name, recipe_path(r) %></li>
     <% end %>
