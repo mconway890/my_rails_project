@@ -30,7 +30,9 @@ function getUserRecipes(data){
     // append html recipes info
     recipesDiv.append(
       `<div>
-        <h4>${recipe.name}</h4>
+        <ul>
+          <li>${recipe.name}</li>
+        <ul>
       </div>`
     )
   })
@@ -49,11 +51,11 @@ function getUserReviews(data){
     // append html recipes info
     reviewsDiv.append(
       `<div>
-        <p>
-        <a href='/recipes/${review.recipe_id}'>
-        Review: ${review.description} Difficulty: ${review.difficulty}
-        </a>
-        </p>
+        <ul>
+        <li><a href='/recipes/${review.recipe_id}'>
+        #${review.recipe_id}. Review: ${review.description} Difficulty: ${review.difficulty}
+        </a></li>
+        </ul>
       </div>`
     )
   })
