@@ -15,7 +15,7 @@
  */
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;
@@ -38,7 +38,7 @@ input[type=submit] {
   font-size: 12px;
   -webkit-font-smoothing: antialiased;
   font-weight: bold;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', serif;
   line-height: 18px;
   padding: 2px 6px;
   text-align: center;
@@ -65,7 +65,7 @@ input[type=submit]:hover {
   font-size: 12px;
   -webkit-font-smoothing: antialiased;
   font-weight: bold;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', serif;
   line-height: 18px;
   padding: 2px 6px;
   text-align: center;
@@ -93,7 +93,7 @@ input[type=submit]:hover {
   font-size: 12px;
   -webkit-font-smoothing: antialiased;
   font-weight: bold;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', serif;
   line-height: 18px;
   padding: 2px 6px;
   text-align: center;
@@ -121,7 +121,7 @@ input[type=submit]:hover {
   font-size: 12px;
   -webkit-font-smoothing: antialiased;
   font-weight: bold;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', serif;
   line-height: 18px;
   padding: 2px 6px;
   text-align: center;
@@ -209,13 +209,13 @@ section.recipes p {
 }
 
 h1.masthead-heading.mb-0 {
-  font-family: 'Catamaran', sans-serif;
+  font-family: 'Open Sans', serif;
   color: white;
   text-shadow: 2px 2px #3c5798;
 }
 
 h2.masthead-subheading.mb-0 {
-  font-family: 'Catamaran', sans-serif;
+  font-family: 'Open Sans', serif;
   color: white;
   text-shadow: 2px 2px #3c5798;
 }
@@ -280,7 +280,7 @@ header {
 }
 
 #recipes {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans', serif;
     border-collapse: collapse;
     width: 100%;
 }
@@ -343,7 +343,7 @@ div#ingredient_list {
     transform: translateY(-50%);
     color: rgba(255,255,255,.75);
     padding-top: 20px;
-    font-family: 'Catamaran', sans-serif;
+    font-family: 'Open Sans', serif;
     color: white;
     text-shadow: 2px 2px #3c5798;
 }
