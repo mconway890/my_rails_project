@@ -16,27 +16,41 @@ $(function(){
   })
   $("#reverse").on("click", function(event) {
     $.get('/ingredients' + '.json', function(data) {
-      reverseIngredients(data);
+      data.reverse();
+      let ingredientsDiv = $("#ingredient_list");
+        ingredientsDiv.empty();
+
+        $.each (data, function(i, ingredient){
+          ingredientsDiv.append(
+            `<div>
+              <ul>
+                <li><a href="/ingredients/${ingredient.id}">${ingredient.name}</a></li>
+              </ul>
+            </div>`
+          )
+        })
     })
     event.preventDefault();
   })
 })
 
-function reverseIngredients(data){
-  let ingredients = data["ingredients"]
-  let ingredientsDiv = $(".reversed");
-  ingredientsDiv.empty();
-
-  $.each (ingredients, function(i, ingredient){
-    ingredientsDiv.append(
-      `<div>
-        <ul>
-          <li>${ingredient.name}</li>
-        </ul>
-      </div>`
-    )
-  })
-}
+// function reverseIngredients(data){
+//   debugger;
+//   let ingredients = data["ingredients"]
+//   data.reverse();
+//   let ingredientsDiv = $(".reversed");
+//   ingredientsDiv.empty();
+//
+//   $.each (ingredients, function(i, ingredient){
+//     ingredientsDiv.append(
+//       `<div>
+//         <ul>
+//           <li>${ingredient.name}</li>
+//         </ul>
+//       </div>`
+//     )
+//   })
+// }
 
 // ES6 class syntax
 class Ingredient{
