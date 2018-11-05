@@ -53,6 +53,90 @@ input[type=submit]:hover {
   border-color: #29487d;
 }
 
+.btn {
+  background-color: #4267b2;
+  border-color: #29487d;
+  border: 1px solid #ced0d4;
+  color: white;
+  font-size: 12px;
+  border-radius: 2px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 18px;
+  padding: 2px 6px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  background-color: #365899;
+  border-color: #29487d;
+  color: white;
+}
+
+.view-user-recipes {
+  background-color: #4267b2;
+  border-color: #29487d;
+  border: 1px solid #ced0d4;
+  color: white;
+  font-size: 12px;
+  border-radius: 2px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 18px;
+  padding: 2px 6px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.view-user-recipes:hover {
+  background-color: #365899;
+  border-color: #29487d;
+  color: white;
+}
+
+.view-user-reviews {
+  background-color: #4267b2;
+  border-color: #29487d;
+  border: 1px solid #ced0d4;
+  color: white;
+  font-size: 12px;
+  border-radius: 2px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 18px;
+  padding: 2px 6px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.view-user-reviews:hover {
+  background-color: #365899;
+  border-color: #29487d;
+  color: white;
+}
+
 input#term {
   margin: 0;
 }
