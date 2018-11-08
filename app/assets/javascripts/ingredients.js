@@ -33,12 +33,13 @@ $(function(){
     event.preventDefault();
   })
   // $(".ing").on("click", function(event) {
-  //   $.get('/ingredients' + '.json', function(data){
+  //   let i = $(".ing").attr("data-id");
+  //   $.get('/ingredients' +'.json', function(data){
   //     let recipeDiv = $(".ingredient-recipes");
   //     recipeDiv.empty();
   //     $.each(data, function(i, ingredients){
-  //       const name = ingredients.recipes[0].name
-  //       debugger;
+  //       //debugger;
+  //       let name = ingredients.recipes
   //       recipeDiv.append(
   //         `<div>
   //           <ul>
