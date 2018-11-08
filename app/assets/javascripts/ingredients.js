@@ -15,12 +15,15 @@ $(function(){
     event.preventDefault();
   })
   $("#reverse").on("click", function(event) {
+    // loads data from the server using a HTTP GET request
     $.get('/ingredients' + '.json', function(data) {
       data.reverse();
       let ingredientsDiv = $("#ingredient_list");
+        // set div in DOM to variable
         ingredientsDiv.empty();
-
+        // empty div before appending
         $.each (data, function(i, ingredient){
+          // append html
           ingredientsDiv.append(
             `<div>
               <ul>

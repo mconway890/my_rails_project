@@ -2,6 +2,7 @@ $(function(){
   $(".view-user-recipes").on("click", function(event){
     // assign i to data-id, equal to @user.id
     let i = $(".view-user-recipes").attr("data-id");
+    // loads data from the server using a HTTP GET request
     $.get("/users/" + i + ".json", function(data){
       // pass data to getUserRecipes
       getUserRecipes(data)
@@ -10,6 +11,7 @@ $(function(){
   })
   $(".view-user-reviews").on("click", function(event){
     let i = $(".view-user-reviews").attr("data-id");
+    // loads data from the server using a HTTP GET request
     $.get("/users/" + i + ".json", function(data){
       getUserReviews(data)
     })
