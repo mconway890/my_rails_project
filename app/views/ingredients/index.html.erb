@@ -14,12 +14,12 @@
     <hr>
     <% @ingredients.each do |i| %>
       <ul>
-        <li><%= link_to i.name, ingredient_path(i) %></li>
-        <!-- <li><button class="ing" data-id="<%=i.id%>"><%= i.name %></button></li> -->
+
+        <li><button class="ing" data-id="<%=i.id%>"><%= i.name %></button></li>
       </ul>
     <% end %>
   </div>
   <button id="reverse" class="btn">Reverse</button>
   <div class="reversed"></div>
-  <!-- <div class="ingredient-recipes"></div> -->
+<div class="ingredient-recipes"></div>
 </section>

@@ -17,7 +17,18 @@ $(function(){
   $("#reverse").on("click", function(event) {
     // loads data from the server using a HTTP GET request
     $.get('/ingredients' + '.json', function(data) {
-      data.reverse();
+      // data.reverse();
+      data.sort(function(a, b){
+        let nameA = a.name.toUpperCase();
+        let nameB = b.name.toUpperCase();
+        if (nameA > nameB) {
+          return -1;
+        }
+        if (nameA < nameB) {
+          return 1;
+        }
+        return 0;
+      })
       let ingredientsDiv = $("#ingredient_list");
         // set div in DOM to variable
         ingredientsDiv.empty();
@@ -35,24 +46,24 @@ $(function(){
     })
     event.preventDefault();
   })
-  // $(".ing").on("click", function(event) {
-  //   let i = $(".ing").attr("data-id");
-  //   $.get('/ingredients' +'.json', function(data){
-  //     let recipeDiv = $(".ingredient-recipes");
-  //     recipeDiv.empty();
-  //     $.each(data, function(i, ingredients){
-  //       //debugger;
-  //       let name = ingredients.recipes
-  //       recipeDiv.append(
-  //         `<div>
-  //           <ul>
-  //             <li>${name}</li>
-  //           </ul>
-  //         </div>`
-  //       )
-  //     })
-  //   })
-  // })
+  $(".ing").on("click", function(event) {
+    //debugger;
+    let i = $(this).data('id')
+    $.get('/ingredients/' + i + '.json', function(data){
+      let recipeDiv = $(".ingredient-recipes");
+      recipeDiv.empty();
+      data.recipes.forEach(function(recipe){
+
+        recipeDiv.append(
+          `<div>
+            <ul>
+              <li>${recipe.name}</li>
+            </ul>
+          </div>`
+        )
+      })
+    })
+  })
 })
 
 // ES6 class syntax
